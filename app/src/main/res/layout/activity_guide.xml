@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  tools:context="com.wanchang.employee.ui.GuideActivity">
+
+  <android.support.v4.view.ViewPager
+    android:id="@+id/vp_guide"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"/>
+
+  <TextView
+    android:id="@+id/tv_skip"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textColor="@color/colorPrimary"
+    android:layout_alignParentRight="true"
+    android:layout_margin="16dp"
+    android:drawableRight="@drawable/guide_icon_skip"
+    android:drawablePadding="10dp"
+    android:textSize="16sp"
+    android:text="跳过"/>
+
+  <Button
+    android:id="@+id/btn_start"
+    android:layout_width="167dp"
+    android:layout_height="41dp"
+    android:layout_marginBottom="110dp"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:background="@drawable/btn_guide_shape"
+    android:padding="5dp"
+    android:text="免费开始"
+    android:textColor="@color/white"
+    android:visibility="invisible"/>
+
+  <me.relex.circleindicator.CircleIndicator
+    android:id="@+id/indicator"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:layout_marginBottom="36dp"
+    android:layout_alignParentBottom="true"
+    app:ci_drawable="@drawable/guide_dot_s"
+    app:ci_drawable_unselected="@drawable/guide_dot_n"
+    app:ci_animator="@anim/indicator_scale_animator"
+    app:ci_margin="12dp"
+    />
+
+</RelativeLayout>

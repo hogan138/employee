@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  >
+
+  <com.allen.library.SuperTextView
+    android:id="@+id/stv_promotion_category"
+    android:layout_width="match_parent"
+    android:layout_height="36dp"
+    app:sLeftIconRes="@drawable/icon_product_gift"
+    app:sLeftTextString="购买XXX件，打5折，还差11111X件"
+    app:sLeftTextSize="12dp"
+    app:sLeftTextColor="@color/color_33"
+    app:sLeftViewMarginRight="56dp"
+    app:sRightIconRes="@drawable/right_r"
+    app:sRightTextString="去凑单"
+    app:sRightTextColor="@color/color_336"
+    app:sRightTextSize="12dp"
+    app:sDividerLineType="none"
+    />
+
+  <TextView
+    android:visibility="gone"
+    android:id="@+id/tv_temp"
+    android:layout_width="match_parent"
+    android:layout_height="6dp"
+    android:background="@color/color_f5"
+    />
+
+</LinearLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+ <include layout="@layout/common_topbar" />
+
+ <com.allen.library.SuperTextView
+   android:id="@+id/stv_group_list"
+   android:layout_width="match_parent"
+   android:layout_height="52dp"
+   app:sLeftIconRes="@drawable/avatar_groupchat"
+   app:sLeftTextString="群聊"
+   app:sLeftTextColor="@color/color_1a"
+   app:sLeftTextSize="17sp"
+   />
+
+ <com.allen.library.SuperTextView
+   android:id="@+id/stv_client_list"
+   android:layout_width="match_parent"
+   android:layout_height="52dp"
+   app:sLeftIconRes="@drawable/avatar_customer"
+   app:sLeftTextString="客户(0)"
+   app:sLeftTextColor="@color/color_1a"
+   app:sLeftTextSize="17sp"
+   app:sDividerLineType="none"
+   />
+
+ <com.allen.library.SuperTextView
+   android:layout_width="match_parent"
+   android:layout_height="36dp"
+   app:sLeftTextString="企业架构"
+   app:sLeftTextColor="@color/color_4d"
+   app:sLeftTextSize="14sp"
+   app:sBackgroundDrawableRes="@color/color_e6"
+   />
+
+ <android.support.v7.widget.RecyclerView
+   android:id="@+id/rv_organization"
+   android:layout_width="match_parent"
+   android:layout_height="match_parent"
+   android:layout_marginTop="8dp"/>
+
+</LinearLayout>

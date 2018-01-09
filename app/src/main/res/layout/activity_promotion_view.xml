@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical">
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:background="@color/color_ff">
+
+    <TextView
+      android:id="@+id/tv_topbar_left"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentLeft="true"
+      android:layout_centerVertical="true"
+      android:layout_marginLeft="16dp"
+      android:layout_marginRight="8dp"
+      android:drawableLeft="@drawable/nav_back"
+      android:textColor="@color/color_1a"
+      android:textSize="16sp"/>
+
+    <TextView
+      android:id="@+id/tv_topbar_title"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerInParent="true"
+      android:gravity="center"
+      android:maxLines="1"
+      android:ellipsize="end"
+      android:textColor="@color/color_1a"
+      android:textSize="18sp"/>
+
+    <RelativeLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="4dp"
+      android:layout_marginRight="3dp"
+      android:layout_centerVertical="true"
+      android:layout_alignParentRight="true">
+      <ImageView
+        android:id="@+id/iv_cart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:src="@drawable/details_cart"/>
+    </RelativeLayout>
+
+    <View
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:layout_alignParentBottom="true"
+      android:background="@color/color_e6"/>
+
+  </RelativeLayout>
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+      android:id="@+id/iv_pic"
+      android:layout_width="match_parent"
+      android:layout_height="120dp"
+      android:scaleType="fitXY"
+      android:src="@drawable/ic_default_image"/>
+
+    <TextView
+      android:id="@+id/tv_go"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:background="@drawable/bg_00_transparent_1_shape"
+      android:layout_alignParentRight="true"
+      android:layout_marginRight="12dp"
+      android:paddingLeft="12dp"
+      android:paddingTop="6dp"
+      android:paddingBottom="6dp"
+      android:paddingRight="16dp"
+      android:textColor="@color/color_ff"
+      android:textSize="11sp"
+      android:text=""/>
+  </RelativeLayout>
+
+  <android.support.v7.widget.RecyclerView
+    android:id="@+id/rv_product"
+    android:layout_marginTop="12dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/>
+
+</LinearLayout>

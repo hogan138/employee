@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical">
+
+  <include layout="@layout/common_topbar" />
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@color/color_ff"
+    android:padding="16dp">
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textSize="16sp"
+      android:textColor="@color/color_1a"
+      android:text="额度"/>
+    <EditText
+      android:id="@+id/edt_price"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="16dp"
+      android:inputType="numberDecimal"
+      android:background="@null"
+      android:layout_weight="1"
+      android:textColor="@color/color_1a"
+      android:textSize="15sp"
+      android:textColorHint="@color/color_cc"
+      android:hint="请输入期望额度"/>
+  </LinearLayout>
+
+  <TextView
+    android:id="@+id/tv_submit"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:layout_marginTop="56dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:gravity="center"
+    android:background="@drawable/btn_336_shape"
+    android:textColor="@color/color_ff"
+    android:textSize="16sp"
+    android:text="提交"/>
+
+
+</LinearLayout>
+

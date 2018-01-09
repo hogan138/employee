@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:orientation="vertical">
+
+  <LinearLayout
+    android:layout_width="70dp"
+    android:layout_height="70dp"
+    android:background="@drawable/iv_ff_shape"
+    android:gravity="center">
+    <ImageView
+      android:id="@+id/item_recommend_img_iv"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:src="@mipmap/ic_launcher"/>
+  </LinearLayout>
+
+  <TextView
+    android:id="@+id/item_recommend_title_tv"
+    android:layout_width="70dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="6dp"
+    android:layout_marginBottom="6dp"
+    android:gravity="center"
+    android:textColor="@color/color_33"
+    android:textSize="13sp"
+    android:text="复方乙酰水杨酸片"/>
+
+</LinearLayout>

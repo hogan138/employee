@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:gravity="center_vertical"
+  android:background="@color/color_ff"
+  android:paddingTop="8dp"
+  android:paddingBottom="8dp"
+  android:paddingLeft="16dp"
+  android:paddingRight="16dp"
+  >
+
+  <de.hdodenhof.circleimageview.CircleImageView
+    android:id="@+id/civ_pic"
+    android:layout_width="48dp"
+    android:layout_height="48dp"
+    android:src="@drawable/avatar88x88"/>
+
+  <com.allen.library.SuperTextView
+    android:id="@+id/stv_lv1_title"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    app:sLeftTextString="张青青"
+    app:sLeftTextSize="17sp"
+    app:sLeftTextColor="@color/color_1a"
+    app:sBottomDividerLineMarginLeft="12dp"
+    />
+
+</LinearLayout>

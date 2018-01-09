@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical">
+
+  <include layout="@layout/common_topbar" />
+
+  <fragment
+    android:id="@+id/map"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    class="com.amap.api.maps.TextureSupportMapFragment" />
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_ff"
+    android:padding="16dp">
+    <TextView
+      android:id="@+id/tv_txt"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textSize="14sp"
+      android:textColor="@color/color_80"
+      android:text="当前定位"/>
+    <TextView
+      android:id="@+id/tv_re_loc"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:drawableLeft="@drawable/icon_relocation"
+      android:drawablePadding="6dp"
+      android:layout_alignParentRight="true"
+      android:textSize="15sp"
+      android:textColor="@color/color_336"
+      android:text="重新定位"/>
+
+    <TextView
+      android:layout_below="@+id/tv_txt"
+      android:id="@+id/tv_loc_address"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:drawableLeft="@drawable/icon_location"
+      android:drawablePadding="6dp"
+      android:layout_marginTop="16dp"
+      android:textSize="15sp"
+      android:textColor="@color/color_1a"
+      android:text="杭州市西湖区西溪国际"/>
+  </RelativeLayout>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_ff"
+    android:orientation="vertical"
+    android:layout_marginTop="12dp"
+    android:padding="16dp">
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textSize="14sp"
+      android:textColor="@color/color_80"
+      android:text="签到客户"/>
+
+    <android.support.v7.widget.RecyclerView
+      android:id="@+id/rv_client"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"/>
+  </LinearLayout>
+
+
+</LinearLayout>
+

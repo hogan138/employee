@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:orientation="vertical">
+
+  <include layout="@layout/common_topbar" />
+
+  <android.support.v7.widget.RecyclerView
+    android:id="@+id/rv_group_member"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_ff"/>
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="24dp"
+    android:paddingLeft="16dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:background="@color/color_ff">
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerVertical="true"
+      android:textSize="17sp"
+      android:textColor="@color/color_1a"
+      android:text="消息免打扰"/>
+
+    <com.kyleduo.switchbutton.SwitchButton
+      android:id="@+id/sb_block_msg"
+      style="@style/SwitchButtonStyle"
+      android:layout_alignParentRight="true"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"/>
+  </RelativeLayout>
+
+
+  <com.allen.library.SuperTextView
+    android:id="@+id/stv_clear_history"
+    android:layout_width="match_parent"
+    android:layout_height="52dp"
+    android:paddingLeft="8dp"
+    app:sRightIconRes="@drawable/icon_rightarrow"
+    app:sLeftTextString="清空聊天记录"
+    app:sLeftTextColor="@color/color_1a"
+    app:sLeftTextSize="17sp"
+    app:sDividerLineType="top"
+    />
+
+
+</LinearLayout>

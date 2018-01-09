@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical">
+
+  <include
+    android:id="@+id/topbar"
+    layout="@layout/common_topbar"/>
+
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="16dp"
+    android:background="@color/color_ff">
+
+    <RelativeLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="36dp"
+      android:layout_gravity="center">
+      <ImageView
+        android:id="@+id/iv_succ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:src="@drawable/icon_paysuccess"/>
+      <LinearLayout
+        android:layout_toRightOf="@+id/iv_succ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:orientation="vertical">
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="#EBAA2C"
+          android:textSize="18sp"
+          android:text="订单支付成功！"/>
+        <TextView
+          android:id="@+id/tv_price"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="8dp"
+          android:textColor="@color/color_80"
+          android:textSize="14sp"
+          android:text="成功支付￥2245.50"/>
+      </LinearLayout>
+    </RelativeLayout>
+
+    <TextView
+      android:id="@+id/tv_order_info"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="36dp"
+      android:layout_gravity="center"
+      android:paddingTop="8dp"
+      android:paddingBottom="8dp"
+      android:paddingLeft="12dp"
+      android:paddingRight="12dp"
+      android:background="@drawable/tv_80_shape"
+      android:textColor="@color/color_80"
+      android:textSize="14sp"
+      android:text="查看订单"/>
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="56dp"
+      android:layout_gravity="center"
+      android:textColor="@color/color_4d"
+      android:textSize="17sp"
+      android:text="订单信息"/>
+
+    <View
+      android:layout_width="match_parent"
+      android:layout_height="2dp"
+      android:layout_margin="16dp"
+      android:background="@drawable/bg_dash_line"
+      android:layerType="software"/>
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingLeft="16dp"
+      android:paddingRight="16dp"
+      android:paddingTop="16dp">
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_1a"
+        android:textSize="15sp"
+        android:text="订单编号："/>
+      <TextView
+        android:id="@+id/tv_order_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:textColor="@color/color_80"
+        android:textSize="15sp"
+        android:text="6577456989754478541"/>
+    </LinearLayout>
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingLeft="16dp"
+      android:paddingRight="16dp"
+      android:paddingTop="16dp">
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_1a"
+        android:textSize="15sp"
+        android:text="交易方式："/>
+      <TextView
+        android:id="@+id/tv_pay_method"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:textColor="@color/color_80"
+        android:textSize="15sp"
+        android:text="支付宝支付"/>
+    </LinearLayout>
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingLeft="16dp"
+      android:paddingRight="16dp"
+      android:paddingTop="16dp">
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_1a"
+        android:textSize="15sp"
+        android:text="下单时间："/>
+      <TextView
+        android:id="@+id/tv_order_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:textColor="@color/color_80"
+        android:textSize="15sp"
+        android:text="2017.4.21 21:14"/>
+    </LinearLayout>
+
+  </LinearLayout>
+
+</LinearLayout>

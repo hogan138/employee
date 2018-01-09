@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:orientation="vertical"
+  android:background="@color/color_ff"
+  android:padding="16dp">
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <TextView
+      android:id="@+id/tv_department_name"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textColor="@color/color_1a"
+      android:textSize="16sp"
+      android:text="产品一部"/>
+
+    <TextView
+      android:layout_toRightOf="@+id/tv_department_name"
+      android:id="@+id/tv_client_category"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:background="@drawable/tv_ffd_stroke_shape"
+      android:layout_marginLeft="16dp"
+      android:paddingLeft="12dp"
+      android:paddingRight="12dp"
+      android:paddingTop="4dp"
+      android:paddingBottom="4dp"
+      android:textColor="#982FFD"
+      android:textSize="12sp"
+      android:text="商业"/>
+
+    <TextView
+      android:id="@+id/tv_apply_status"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentRight="true"
+      android:layout_centerVertical="true"
+      android:layout_gravity="end"
+      android:textColor="@color/color_336"
+      android:textSize="14sp"
+      android:text="申请"/>
+
+  </RelativeLayout>
+
+  <TextView
+    android:id="@+id/tv_area"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:textColor="@color/color_80"
+    android:textSize="15sp"
+    android:text="招商区域：杭州市 西湖区；杭州市 滨江区；杭州市 萧山区"/>
+
+  <TextView
+    android:id="@+id/tv_comment"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:textColor="@color/color_4d"
+    android:textSize="14sp"
+    android:text="产品部一部销售的药品以极佳的品质和信誉已赢得客户的高度信赖。"/>
+
+
+</LinearLayout>

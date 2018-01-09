@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/color_ff"
+  android:orientation="vertical">
+
+  <include layout="@layout/common_topbar"/>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:layout_margin="16dp"
+    android:orientation="vertical">
+    <TextView
+      android:id="@+id/tv_title"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textSize="20sp"
+      android:textColor="@color/color_1a"
+      android:text="38个利用人工智能发现新药的初创公司面向市场"/>
+
+    <TextView
+      android:id="@+id/tv_time"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="16dp"
+      android:textSize="12sp"
+      android:textColor="@color/color_80"
+      android:text="2017-08-13 19:40"/>
+
+    <WebView
+      android:id="@+id/webView"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:scrollbars="none"
+      android:layout_marginTop="16dp"/>
+  </LinearLayout>
+
+</LinearLayout>

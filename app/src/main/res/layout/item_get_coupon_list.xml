@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:id="@+id/rl_coupon_root"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:layout_marginLeft="12dp"
+  android:layout_marginRight="12dp"
+  android:layout_marginTop="6dp"
+  android:layout_marginBottom="6dp"
+  android:background="@drawable/voucher_get_n">
+
+  <LinearLayout
+    android:id="@+id/ll_left"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="6dp"
+    android:layout_centerVertical="true"
+    android:gravity="center"
+    android:orientation="vertical">
+    <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content">
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_ff"
+        android:textSize="15sp"
+        android:text="¥"/>
+      <TextView
+        android:id="@+id/tv_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dp"
+        android:textColor="@color/color_ff"
+        android:textSize="30sp"
+        android:text="50"/>
+    </LinearLayout>
+
+    <TextView
+      android:id="@+id/tv_condition"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textColor="@color/color_ff"
+      android:textSize="15sp"
+      android:text="满199.00可用"/>
+  </LinearLayout>
+
+  <LinearLayout
+    android:id="@+id/ll_content"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:orientation="vertical">
+    <TextView
+      android:id="@+id/tv_name"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textColor="@color/color_33"
+      android:textSize="15sp"
+      android:text="普通优惠券"/>
+    <TextView
+      android:id="@+id/tv_time"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="6dp"
+      android:textColor="@color/color_99"
+      android:textSize="11sp"
+      android:text="2017.06.19-2017.07.19"/>
+    <TextView
+      android:id="@+id/tv_usage"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="6dp"
+      android:textColor="@color/color_99"
+      android:textSize="11sp"
+      android:text="使用范围 医药器械类商品"/>
+  </LinearLayout>
+
+
+  <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentRight="true"
+    android:layout_centerVertical="true"
+    android:layout_marginRight="16dp"
+    android:gravity="center"
+    android:orientation="vertical">
+    <TextView
+      android:id="@+id/tv_get_coupon"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textColor="@color/color_1a"
+      android:textSize="13sp"
+      android:text="立即领取"/>
+
+    <TextView
+      android:id="@+id/tv_coupon_op"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="12dp"
+      android:textColor="@color/color_1a"
+      android:textSize="13sp"
+      android:text="去使用"/>
+  </LinearLayout>
+
+
+</RelativeLayout>

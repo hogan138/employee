@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:background="@color/color_ff">
+
+  <LinearLayout
+    android:id="@+id/ll_product_img"
+    android:layout_width="60dp"
+    android:layout_height="60dp"
+    android:layout_marginLeft="12dp"
+    android:layout_marginTop="12dp"
+    android:gravity="center">
+    <de.hdodenhof.circleimageview.CircleImageView
+      android:id="@+id/iv_pic"
+      android:layout_width="52dp"
+      android:layout_height="52dp"
+      android:src="@drawable/ic_default_image"/>
+  </LinearLayout>
+
+  <LinearLayout
+    android:id="@+id/ll_top"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp"
+    android:paddingBottom="12dp"
+    android:layout_toRightOf="@+id/ll_product_img"
+    android:layout_marginLeft="12dp"
+    android:orientation="vertical">
+    <TextView
+      android:id="@+id/tv_name"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textSize="16sp"
+      android:textColor="@color/color_1a"
+      android:text="双十一特价促销"/>
+    <TextView
+      android:id="@+id/tv_id"
+      android:layout_marginTop="3dp"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textSize="14sp"
+      android:textColor="@color/color_80"
+      android:text="ID：T3384u47666"/>
+    <TextView
+      android:id="@+id/tv_mobile"
+      android:layout_marginTop="3dp"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textSize="14sp"
+      android:textColor="@color/color_80"
+      android:text="手机号：13955764873"/>
+    <TextView
+      android:id="@+id/tv_id_card"
+      android:layout_marginTop="3dp"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textSize="14sp"
+      android:textColor="@color/color_80"
+      android:text="身份证：2346664667883992"/>
+  </LinearLayout>
+
+  <ImageView
+    android:id="@+id/iv_lv0_icon"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="12dp"
+    android:layout_alignParentRight="true"
+    android:layout_centerVertical="true"
+    android:src="@drawable/icon_arrow_down"/>
+
+</RelativeLayout>

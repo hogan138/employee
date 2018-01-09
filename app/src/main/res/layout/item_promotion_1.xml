@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:orientation="vertical">
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+      android:id="@+id/iv_pic"
+      android:layout_width="match_parent"
+      android:layout_height="120dp"
+      android:scaleType="fitXY"
+      android:src="@drawable/ic_default_image"/>
+
+    <TextView
+      android:id="@+id/tv_go"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:background="@drawable/bg_00_transparent_shape"
+      android:layout_alignParentRight="true"
+      android:layout_centerVertical="true"
+      android:paddingLeft="12dp"
+      android:paddingTop="6dp"
+      android:paddingBottom="6dp"
+      android:paddingRight="16dp"
+      android:textColor="@color/color_ff"
+      android:textSize="11sp"
+      android:text="进入专区"/>
+  </RelativeLayout>
+
+
+  <android.support.v7.widget.RecyclerView
+    android:id="@+id/rv_promotion_2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp"/>
+
+</LinearLayout>

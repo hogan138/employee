@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:background="@color/color_ff"
+  android:gravity="center_vertical"
+  android:padding="16dp">
+
+  <TextView
+    android:id="@+id/tv_promotion_category"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerVertical="true"
+    android:background="@drawable/tv_d15_stroke_shape"
+    android:paddingTop="3dp"
+    android:paddingBottom="3dp"
+    android:paddingLeft="6dp"
+    android:paddingRight="6dp"
+    android:textSize="12sp"
+    android:textColor="#E39D15"
+    android:text="满减"/>
+  <TextView
+    android:layout_toRightOf="@+id/tv_promotion_category"
+    android:id="@+id/tv_promotion_title"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerVertical="true"
+    android:layout_marginLeft="16dp"
+    android:textSize="14sp"
+    android:textColor="@color/color_4d"
+    android:text="满120000元减3000元"/>
+
+  <ImageView
+    android:id="@+id/iv_right_arrow"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentRight="true"
+    android:layout_centerVertical="true"
+    android:src="@drawable/icon_rightarrow"/>
+
+</RelativeLayout>

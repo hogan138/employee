@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/Users/stormlei/AndroidStudioProjects/mall.android.employee/PushSDK/assets"/><source path="/Users/stormlei/AndroidStudioProjects/mall.android.employee/PushSDK/build/generated/assets/shaders/release"/></dataSet><dataSet config="release"><source path="/Users/stormlei/AndroidStudioProjects/mall.android.employee/PushSDK/build-types/release/assets"/></dataSet></merger>

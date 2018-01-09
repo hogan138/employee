@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:background="@color/color_ff"
+  android:paddingTop="12dp"
+  android:paddingBottom="12dp"
+  >
+
+  <LinearLayout
+    android:id="@+id/ll_product_img"
+    android:layout_width="70dp"
+    android:layout_height="70dp"
+    android:background="@drawable/iv_ff_shape"
+    android:gravity="center">
+    <ImageView
+      android:id="@+id/iv_product_img"
+      android:layout_width="52dp"
+      android:layout_height="52dp"
+      android:src="@drawable/ic_default_image"/>
+  </LinearLayout>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_toRightOf="@+id/ll_product_img"
+    android:layout_marginLeft="12dp"
+    android:orientation="vertical">
+    <TextView
+      android:id="@+id/tv_product_title"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textSize="16sp"
+      android:textColor="@color/color_1a"
+      android:text="复方乙酰水杨酸片"/>
+    <TextView
+      android:id="@+id/tv_product_manufacture"
+      android:layout_marginTop="3dp"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textSize="14sp"
+      android:textColor="@color/color_4d"
+      android:text="山东方明药业集团股份有限公司"/>
+    <TextView
+      android:id="@+id/tv_product_validity"
+      android:layout_marginTop="3dp"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textSize="14sp"
+      android:textColor="@color/color_80"
+      android:text="有效期至: 2018年06月30日"/>
+    <TextView
+      android:id="@+id/tv_product_specs"
+      android:layout_marginTop="3dp"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textSize="13sp"
+      android:textColor="@color/color_b3"
+      android:text="规格：40mg*7片*4板"/>
+
+  </LinearLayout>
+
+  <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_centerVertical="true"
+    android:layout_alignParentRight="true">
+    <TextView
+      android:id="@+id/tv_product_count"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="right"
+      android:padding="6dp"
+      android:textColor="@color/color_4d"
+      android:textSize="13sp"
+      android:text="x25"/>
+
+    <TextView
+      android:id="@+id/tv_return_product_op"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="12dp"
+      android:background="@drawable/tv_red_shape"
+      android:padding="6dp"
+      android:textColor="@color/color_336"
+      android:textSize="12sp"
+      android:text="申请退货"/>
+  </LinearLayout>
+
+
+</RelativeLayout>

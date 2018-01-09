@@ -1,0 +1,81 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  tools:context="com.wanchang.employee.ui.MyFragment">
+
+  <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none">
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
+
+
+      <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#ED476E">
+        <ImageView
+          android:id="@+id/iv_setting"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="16dp"
+          android:layout_centerVertical="true"
+          android:src="@drawable/nav_set"/>
+      </RelativeLayout>
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_my_gradient_shape"
+        android:orientation="vertical">
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:paddingBottom="24dp"
+          android:gravity="center"
+          android:orientation="vertical">
+          <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civ_avatar"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:src="@drawable/avatar136x136"/>
+          <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textSize="15sp"
+            android:textColor="@color/color_ff"
+            android:text="蓝天大药房"/>
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+          android:id="@+id/rv_dep"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"/>
+
+      </LinearLayout>
+
+
+
+      <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_me"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+      <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_e5"/>
+
+
+    </LinearLayout>
+  </ScrollView>
+
+
+</LinearLayout>

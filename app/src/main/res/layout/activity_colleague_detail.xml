@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:orientation="vertical">
+
+  <include layout="@layout/common_topbar" />
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:background="@color/color_ff"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+    <de.hdodenhof.circleimageview.CircleImageView
+      android:id="@+id/civ_pic"
+      android:layout_width="48dp"
+      android:layout_height="48dp"
+      android:src="@drawable/avatar104x104"/>
+    <TextView
+      android:id="@+id/tv_colleague_name"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="8dp"
+      android:textSize="15sp"
+      android:textColor="@color/color_1a"
+      android:text="徐兰"/>
+  </LinearLayout>
+
+
+  <RelativeLayout
+    android:id="@+id/rl_call"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="1dp"
+    android:padding="16dp"
+    android:background="@color/color_ff">
+
+    <TextView
+      android:id="@+id/tv_txt2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textColor="@color/color_1a"
+      android:textSize="17sp"
+      android:text="联系电话"/>
+
+    <TextView
+      android:layout_toRightOf="@+id/tv_txt2"
+      android:id="@+id/tv_colleague_mobile"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="16dp"
+      android:textColor="@color/color_4d"
+      android:textSize="16sp"
+      android:text="1300000001"/>
+
+    <ImageView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentRight="true"
+      android:src="@drawable/icon_phone"/>
+
+  </RelativeLayout>
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp"
+    android:padding="16dp"
+    android:background="@color/color_ff">
+
+    <TextView
+      android:id="@+id/tv_txt3"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textColor="@color/color_1a"
+      android:textSize="17sp"
+      android:text="部门"/>
+
+    <TextView
+      android:layout_toRightOf="@+id/tv_txt3"
+      android:id="@+id/tv_department"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="16dp"
+      android:textColor="@color/color_4d"
+      android:textSize="16sp"
+      android:text="产品一部"/>
+
+    <ImageView
+      android:visibility="gone"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerVertical="true"
+      android:layout_alignParentRight="true"
+      android:src="@drawable/icon_rightarrow"/>
+
+  </RelativeLayout>
+
+  <TextView
+    android:id="@+id/tv_send_msg"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginTop="36dp"
+    android:background="@drawable/btn_336_shape"
+    android:gravity="center"
+    android:textColor="@color/color_ff"
+    android:textSize="16sp"
+    android:text="发消息"/>
+
+
+</LinearLayout>

@@ -1,0 +1,26 @@
+<resources>
+  <string name="app_name">工作版</string>
+
+  <!-- easemo ui start -->
+  <string name="at_your_in_group">%s在群聊中@了你</string>
+  <string name="switch_camera">切换摄像头</string>
+  <string name="capture_image">抓取图片</string>
+  <string name="delete_contact">删除联系人</string>
+  <string name="call_version_inconsistent">通话协议版本不一致</string>
+  <string name="network_unstable">网络不稳定</string>
+  <string name="no_call_data">没有通话数据</string>
+  <string name="have_connected_with">已经和对方建立连接</string>
+  <string name="In_the_call">通话中……</string>
+  <string name="The_other_party_refused_to_accept">对方拒绝接受！</string>
+  <string name="Connection_failure">连接建立失败！</string>
+  <string name="The_other_party_is_not_online">对方不在线，请稍后再拨……</string>
+  <string name="The_other_is_on_the_phone_please">对方正在通话中，请稍后再拨</string>
+  <string name="The_other_is_hang_up">对方已经挂断</string>
+  <string name="The_other_party_did_not_answer_new">对方未接听</string>
+  <string name="em_user_remove">此用户已被移除</string>
+  <string name="user_forbidden">用户被服务器限制连接</string>
+  <string name="msg_recall_by_self">您撤回了一条消息</string>
+  <string name="msg_recall_by_user">%1$s 撤回了一条消息</string>
+
+
+</resources>

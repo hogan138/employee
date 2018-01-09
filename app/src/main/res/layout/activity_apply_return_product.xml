@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:orientation="vertical">
+
+  <include
+    android:id="@+id/topbar"
+    layout="@layout/common_topbar" />
+
+  <RelativeLayout
+    android:layout_below="@+id/topbar"
+    android:id="@+id/rl_product_info"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:background="@color/color_ff">
+    <LinearLayout
+      android:id="@+id/ll_product_img"
+      android:layout_width="70dp"
+      android:layout_height="70dp"
+      android:background="@drawable/iv_ff_shape"
+      android:gravity="center">
+      <ImageView
+        android:id="@+id/iv_product_img"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:src="@drawable/ic_default_image"/>
+    </LinearLayout>
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_toRightOf="@+id/ll_product_img"
+      android:layout_marginLeft="12dp"
+      android:orientation="vertical">
+      <TextView
+        android:id="@+id/tv_product_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/color_1a"
+        android:text="复方乙酰水杨酸片"/>
+      <TextView
+        android:id="@+id/tv_product_manufacture"
+        android:layout_marginTop="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="@color/color_4d"
+        android:text="山东方明药业集团股份有限公司"/>
+      <TextView
+        android:id="@+id/tv_product_validity"
+        android:layout_marginTop="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="@color/color_80"
+        android:text="有效期至: 2018年06月30日"/>
+      <TextView
+        android:id="@+id/tv_product_specs"
+        android:layout_marginTop="3dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+        android:textColor="@color/color_b3"
+        android:text="规格：40mg*7片*4板"/>
+
+    </LinearLayout>
+
+    <TextView
+      android:id="@+id/tv_product_price"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerVertical="true"
+      android:layout_alignParentRight="true"
+      android:padding="6dp"
+      android:textColor="@color/color_4d"
+      android:textSize="13sp"
+      android:text="￥8.20"/>
+  </RelativeLayout>
+
+  <android.support.v7.widget.RecyclerView
+    android:layout_below="@+id/rl_product_info"
+    android:id="@+id/rv_batch"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp"/>
+
+  <TextView
+    android:layout_below="@+id/rv_batch"
+    android:id="@+id/tv_total_price"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="@color/color_f2"
+    android:padding="12dp"
+    android:text="退款金额：0元"/>
+
+  <com.allen.library.SuperTextView
+    android:layout_below="@+id/tv_total_price"
+    android:id="@+id/stv_return_reason"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    app:sLeftTextString="退货原因"
+    app:sLeftTextColor="@color/color_1a"
+    app:sLeftTextSize="14sp"
+    app:sRightIconRes="@drawable/icon_arrow_right"
+    />
+
+  <LinearLayout
+    android:layout_below="@+id/stv_return_reason"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:background="@color/color_ff"
+    android:padding="12dp"
+    android:gravity="center_vertical">
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="退货说明"
+      android:textSize="14sp"
+      android:textColor="@color/color_1a"
+      />
+    <EditText
+      android:id="@+id/edt_return_explain"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="16dp"
+      android:background="@null"
+      android:layout_weight="1"
+      android:hint="选填"
+      android:textSize="14sp"
+      android:textColorHint="@color/color_cc"
+      />
+  </LinearLayout>
+
+  <TextView
+    android:id="@+id/tv_submit"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:layout_alignParentBottom="true"
+    android:gravity="center"
+    android:text="提交"
+    android:textColor="@color/color_ff"
+    android:textSize="16sp"
+    android:background="@color/color_336"/>
+
+</RelativeLayout>

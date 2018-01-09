@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:orientation="vertical">
+
+  <include layout="@layout/common_topbar" />
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_ff"
+    android:paddingLeft="16dp"
+    android:orientation="vertical">
+
+    <com.allen.library.SuperTextView
+      android:id="@+id/stv_modify_password"
+      android:layout_width="match_parent"
+      android:layout_height="48dp"
+      app:sLeftTextString="修改密码"
+      app:sLeftTextSize="17sp"
+      app:sLeftTextColor="@color/color_1a"
+      app:sRightIconRes="@drawable/icon_rightarrow"
+      />
+    <com.allen.library.SuperTextView
+      android:id="@+id/stv_bind_mobile"
+      android:layout_width="match_parent"
+      android:layout_height="48dp"
+      app:sLeftTextString="绑定手机"
+      app:sLeftTextSize="17sp"
+      app:sLeftTextColor="@color/color_1a"
+      app:sRightIconRes="@drawable/icon_rightarrow"
+      />
+    <com.allen.library.SuperTextView
+      android:id="@+id/stv_clear_cache"
+      android:layout_width="match_parent"
+      android:layout_height="48dp"
+      app:sLeftTextString="清除缓存"
+      app:sLeftTextSize="17sp"
+      app:sLeftTextColor="@color/color_1a"
+      app:sRightIconRes="@drawable/icon_rightarrow"
+      app:sRightTextString="22.89M"
+      app:sRightTextColor="@color/color_4d"
+      app:sRightTextSize="16sp"
+      />
+    <com.allen.library.SuperTextView
+      android:layout_width="match_parent"
+      android:layout_height="48dp"
+      app:sLeftTextString="问题帮助"
+      app:sLeftTextSize="17sp"
+      app:sLeftTextColor="@color/color_1a"
+      app:sRightIconRes="@drawable/icon_rightarrow"
+      />
+    <com.allen.library.SuperTextView
+      android:layout_width="match_parent"
+      android:layout_height="48dp"
+      app:sLeftTextString="关于我们"
+      app:sLeftTextSize="17sp"
+      app:sLeftTextColor="@color/color_1a"
+      app:sRightIconRes="@drawable/icon_rightarrow"
+      />
+  </LinearLayout>
+
+  <TextView
+    android:id="@+id/tv_logout"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:layout_marginTop="36dp"
+    android:background="@color/color_ff"
+    android:gravity="center"
+    android:text="退出登录"
+    android:textSize="17sp"
+    android:textColor="@color/color_336"/>
+
+</LinearLayout>

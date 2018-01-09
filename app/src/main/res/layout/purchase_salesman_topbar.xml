@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="?actionBarSize"
+  android:id="@+id/toolbar"
+  android:background="@color/color_336"
+  app:contentInsetStart="0dp">
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+      android:visibility="invisible"
+      android:id="@+id/iv_topbar_left"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentLeft="true"
+      android:layout_centerVertical="true"
+      android:layout_marginLeft="16dp"
+      android:layout_marginRight="3dp"
+      android:src="@drawable/nav_scan_w"/>
+
+    <TextView
+      android:id="@+id/tv_topbar_title"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerInParent="true"
+      android:drawableRight="@drawable/down_w"
+      android:drawablePadding="6dp"
+      android:textColor="@color/color_ff"
+      android:textSize="16sp"
+      android:text="蓝天药店"/>
+
+    <ImageView
+      android:visibility="invisible"
+      android:id="@+id/iv_topbar_right"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentRight="true"
+      android:layout_centerVertical="true"
+      android:layout_marginLeft="16dp"
+      android:layout_marginRight="16dp"
+      android:src="@drawable/nav_search_w"/>
+
+  </RelativeLayout>
+
+</android.support.v7.widget.Toolbar>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:background="@color/color_ff"
+  android:orientation="vertical"
+  android:paddingLeft="12dp"
+  android:paddingRight="12dp"
+  android:paddingTop="12dp">
+
+  <com.allen.library.SuperTextView
+    android:id="@+id/stv_top"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    app:sLeftTextString="￥ 540.00"
+    app:sLeftTextColor="@color/color_336"
+    app:sLeftTextSize="17sp"
+    app:sRightTopTextString="订单号：3014751475254"
+    app:sRightTopTextColor="@color/color_b3"
+    app:sRightTopTextSize="13sp"
+    app:sRightBottomTextString="2017/05/06"
+    app:sRightBottomTextColor="@color/color_b3"
+    app:sRightBottomTextSize="13sp"
+    app:sRightViewGravity="right_center"
+    />
+
+
+  <com.allen.library.SuperTextView
+    android:id="@+id/stv_bottom"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    app:sLeftTextString="克林霉素磷酸酯凝胶"
+    app:sLeftTextColor="@color/color_4d"
+    app:sLeftTextSize="15sp"
+    app:sRightTextString="x25"
+    app:sRightTextColor="@color/color_4d"
+    app:sRightTextSize="12sp"
+    app:sDividerLineType="none"
+    />
+
+
+
+
+</LinearLayout>

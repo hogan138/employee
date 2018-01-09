@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:id="@+id/drawer_layout"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  xmlns:tl="http://schemas.android.com/apk/res-auto"
+  android:orientation="vertical">
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_ff"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+      android:id="@+id/rl_topbar"
+      android:layout_width="match_parent"
+      android:layout_height="48dp"
+      android:background="@color/color_ff">
+
+      <TextView
+        android:id="@+id/tv_topbar_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="4dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:drawableLeft="@drawable/nav_back"
+        android:textColor="@color/color_1a"
+        android:textSize="16sp"/>
+
+      <EditText
+        android:id="@+id/edt_topbar_title"
+        android:layout_width="260dp"
+        android:layout_height="32dp"
+        android:focusable="false"
+        android:layout_centerInParent="true"
+        android:paddingLeft="16dp"
+        android:background="@drawable/edt_f3_shape"
+        android:drawableLeft="@drawable/icon_searchinput"
+        android:drawablePadding="6dp"
+        android:ellipsize="end"
+        android:hint="搜索"
+        android:maxLines="1"
+        android:textColorHint="@color/color_c3"
+        android:textSize="14sp"/>
+
+      <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="3dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true">
+        <ImageView
+          android:id="@+id/iv_cart"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:padding="12dp"
+          android:src="@drawable/details_cart"/>
+      </RelativeLayout>
+
+      <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/color_e6"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+      android:layout_below="@+id/rl_topbar"
+      android:id="@+id/ll_tab"
+      android:layout_width="match_parent"
+      android:layout_height="40dp"
+      android:background="@color/color_ff"
+      android:orientation="horizontal">
+      <com.flyco.tablayout.CommonTabLayout
+        android:id="@+id/tl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        tl:tl_iconGravity="RIGHT"
+        tl:tl_indicator_width="40dp"
+        tl:tl_indicator_color="@color/color_336"
+        tl:tl_indicator_height="2dp"
+        tl:tl_textSelectColor="@color/color_336"
+        tl:tl_textUnselectColor="@color/color_33"
+        tl:tl_textsize="15sp"
+        tl:tl_underline_color="@color/color_dc"
+        tl:tl_underline_height="1dp"/>
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="4"
+        >
+        <TextView
+          android:id="@+id/tv_filter_list"
+          android:layout_width="wrap_content"
+          android:layout_height="39dp"
+          android:drawableLeft="@drawable/icon_filter"
+          android:drawablePadding="3dp"
+          android:paddingTop="3dp"
+          android:gravity="center"
+          android:layout_gravity="center"
+          android:textSize="15sp"
+          android:textColor="@color/color_33"
+          android:text="筛选"/>
+        <View
+          android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:background="@color/color_dc" />
+      </LinearLayout>
+    </LinearLayout>
+
+    <FrameLayout
+      android:id="@+id/fl_change"
+      android:layout_below="@+id/ll_tab"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+    </FrameLayout>
+
+  </RelativeLayout>
+
+  <!-- 抽屉内容 -->
+  <FrameLayout
+    android:id="@+id/drawer_content"
+    android:layout_width="280dp"
+    android:layout_height="match_parent"
+    android:layout_gravity="end"
+    android:clickable="true"
+    />
+
+</android.support.v4.widget.DrawerLayout>

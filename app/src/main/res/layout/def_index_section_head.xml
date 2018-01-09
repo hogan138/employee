@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:background="@color/color_ff"
+  android:paddingBottom="12dp"
+  android:paddingTop="12dp"
+  android:gravity="center_horizontal"
+  >
+  
+  <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <View
+      android:layout_width="16dp"
+      android:layout_height="1dp"
+      android:layout_gravity="center_vertical"
+      android:background="#19c9a2"/>
+    <TextView
+      android:id="@+id/tv_head_title"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="6dp"
+      android:layout_marginRight="6dp"
+      android:textSize="14sp"
+      android:textColor="#19c9a2"
+      android:text="热卖推荐"
+      />
+    <View
+      android:layout_width="16dp"
+      android:layout_height="1dp"
+      android:layout_gravity="center_vertical"
+      android:background="#19c9a2"/>
+  </LinearLayout>
+
+
+</LinearLayout>

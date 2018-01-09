@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical">
+
+  <include layout="@layout/common_topbar" />
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_ff"
+    android:orientation="vertical">
+
+
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:orientation="horizontal">
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="手机号"
+      android:textColor="@color/color_1a"
+      android:textSize="16sp"/>
+    <EditText
+      android:id="@+id/edt_login_mobile"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="12dp"
+      android:inputType="phone"
+      android:textSize="15sp"
+      android:hint="请输入手机号"
+      android:background="@null"
+      android:textColorHint="@color/color_cc"/>
+  </LinearLayout>
+
+  <View
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:background="@color/color_e5"/>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:orientation="horizontal">
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="验证码"
+      android:textColor="@color/color_1a"
+      android:textSize="16sp"/>
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="12dp"
+      android:gravity="center_vertical"
+      android:orientation="horizontal">
+      <EditText
+        android:id="@+id/edt_login_captcha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:layout_weight="1"
+        android:textSize="15sp"
+        android:hint="请输入验证码"
+        android:background="@null"
+        android:textColorHint="@color/color_cc"/>
+      <TextView
+        android:id="@+id/tv_login_get_captcha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="发送验证码"
+        android:textSize="15sp"
+        android:textColor="@color/color_4d"/>
+    </LinearLayout>
+
+  </LinearLayout>
+  </LinearLayout>
+
+</LinearLayout>

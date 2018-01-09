@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:background="@color/color_ff">
+
+  <LinearLayout
+    android:id="@+id/ll_product_img"
+    android:layout_width="60dp"
+    android:layout_height="60dp"
+    android:layout_marginLeft="12dp"
+    android:layout_marginTop="12dp"
+    android:background="@drawable/iv_ff_shape"
+    android:gravity="center">
+    <ImageView
+      android:id="@+id/iv_product_img"
+      android:layout_width="52dp"
+      android:layout_height="52dp"
+      android:src="@drawable/ic_default_image"/>
+  </LinearLayout>
+
+  <TextView
+    android:visibility="gone"
+    android:layout_below="@+id/ll_product_img"
+    android:layout_alignRight="@+id/ll_product_img"
+    android:id="@+id/tv_is_recommend"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="2dp"
+    android:background="@drawable/tv_b3_stroke_shape"
+    android:layout_marginTop="6dp"
+    android:textSize="10sp"
+    android:textColor="@color/color_b3"
+    android:text="推荐"/>
+
+  <LinearLayout
+    android:id="@+id/ll_top"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp"
+    android:paddingBottom="12dp"
+    android:layout_toRightOf="@+id/ll_product_img"
+    android:layout_marginLeft="12dp"
+    android:orientation="vertical">
+    <TextView
+      android:id="@+id/tv_product_title"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textSize="16sp"
+      android:textColor="@color/color_1a"
+      android:text="复方乙酰水杨酸片"/>
+    <TextView
+      android:id="@+id/tv_product_id"
+      android:layout_marginTop="3dp"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textSize="14sp"
+      android:textColor="@color/color_80"
+      android:text="ID：T3384u47666"/>
+    <TextView
+      android:id="@+id/tv_product_manufacture"
+      android:layout_marginTop="3dp"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textSize="14sp"
+      android:textColor="@color/color_80"
+      android:text="山东方明药业集团股份有限公司"/>
+    <TextView
+      android:id="@+id/tv_product_specs"
+      android:layout_marginTop="3dp"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textSize="13sp"
+      android:textColor="@color/color_80"
+      android:text="规格：40mg*7片*4板"/>
+  </LinearLayout>
+
+  <ImageView
+    android:id="@+id/iv_lv0_icon"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="12dp"
+    android:layout_alignParentRight="true"
+    android:layout_marginTop="56dp"
+    android:src="@drawable/icon_arrow_down"/>
+
+</RelativeLayout>

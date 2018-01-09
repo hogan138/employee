@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:background="@color/color_ff"
+  android:padding="12dp"
+  >
+
+  <RelativeLayout
+    android:id="@+id/rl_left"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <CheckBox
+      android:visibility="gone"
+      android:id="@+id/cb_check"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerVertical="true"
+      android:background="@drawable/checkbox_style"
+      android:button="@null"
+      />
+
+    <RelativeLayout
+      android:layout_toRightOf="@+id/cb_check"
+      android:id="@+id/ll_product_img"
+      android:layout_width="70dp"
+      android:layout_height="70dp"
+      android:layout_marginLeft="8dp"
+      android:background="@drawable/iv_ff_shape">
+      <ImageView
+        android:id="@+id/iv_product_img"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_centerInParent="true"
+        android:src="@mipmap/ic_launcher"/>
+      <TextView
+        android:id="@+id/tv_invalid"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/color_black"
+        android:gravity="center"
+        android:textSize="11sp"
+        android:textColor="@color/color_ff"
+        android:text="失效"/>
+    </RelativeLayout>
+  </RelativeLayout>
+
+
+  <TextView
+    android:id="@+id/tv_product_title"
+    android:layout_toRightOf="@+id/rl_left"
+    android:layout_marginLeft="12dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:singleLine="true"
+    android:ellipsize="end"
+    android:textSize="15sp"
+    android:textColor="@color/color_1a"
+    android:text="克林霉素磷酸酯凝胶"/>
+
+  <TextView
+    android:id="@+id/tv_product_manufacture"
+    android:layout_below="@+id/tv_product_title"
+    android:layout_alignLeft="@+id/tv_product_title"
+    android:layout_marginTop="3dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="13sp"
+    android:ellipsize="end"
+    android:singleLine="true"
+    android:ems="12"
+    android:textColor="@color/color_4d"
+    android:text="山东方明药业集团股份有限公司"/>
+
+  <TextView
+    android:id="@+id/tv_product_validity"
+    android:layout_below="@+id/tv_product_manufacture"
+    android:layout_alignLeft="@+id/tv_product_manufacture"
+    android:layout_marginTop="3dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="13sp"
+    android:textColor="@color/color_80"
+    android:text="有效期至: 2018年06月30日"/>
+
+  <LinearLayout
+    android:layout_below="@+id/tv_product_validity"
+    android:layout_alignLeft="@+id/tv_product_validity"
+    android:id="@+id/ll_product_price"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp">
+    <TextView
+      android:id="@+id/tv_product_price"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textSize="14sp"
+      android:textColor="@color/color_336"
+      android:text="￥8.20"/>
+
+    <TextView
+      android:visibility="gone"
+      android:id="@+id/tv_product_oprice"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="8dp"
+      android:textSize="14sp"
+      android:textColor="@color/color_b3"
+      android:text="￥9.00"/>
+  </LinearLayout>
+
+
+  <TextView
+    android:id="@+id/tv_product_specs"
+    android:layout_below="@+id/ll_product_price"
+    android:layout_alignLeft="@+id/ll_product_price"
+    android:layout_marginTop="3dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="12sp"
+    android:textColor="@color/color_b3"
+    android:text="规格：40mg*7片*4板"/>
+
+  <TextView
+    android:visibility="gone"
+    android:id="@+id/tv_product_promotion"
+    android:layout_below="@+id/tv_product_specs"
+    android:layout_alignLeft="@+id/tv_product_specs"
+    android:background="@drawable/tv_red_shape"
+    android:drawableRight="@drawable/ic_arrow_right_red"
+    android:drawablePadding="3dp"
+    android:layout_marginTop="6dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingTop="3dp"
+    android:paddingBottom="3dp"
+    android:paddingLeft="6dp"
+    android:paddingRight="6dp"
+    android:textSize="12sp"
+    android:textColor="@color/color_00"
+    android:text="其它促销信息"/>
+
+
+  <com.mcxtzhang.lib.AnimShopButton
+    android:visibility="gone"
+    android:id="@+id/btn_product_number"
+    android:layout_alignParentRight="true"
+    android:layout_alignTop="@+id/ll_product_price"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="12dp"
+    app:addEnableBgColor="@color/color_336"
+    app:addEnableFgColor="@color/color_ff"
+    app:hintBgColor="@color/color_336"
+    app:hintFgColor="@color/color_ff"
+    app:radius="10dp"
+    app:ignoreHintArea="true"
+    app:maxCount="99"/>
+
+</RelativeLayout>

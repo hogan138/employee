@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  package="com.wanchang.employee">
+
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+  <uses-permission android:name="android.permission.CAMERA"/>
+  <uses-permission android:name="android.permission.VIBRATE"/>
+  <uses-permission android:name="android.permission.FLASHLIGHT"/>
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+  <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+  <uses-permission android:name="android.permission.GET_TASKS"/>
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+  <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+  <uses-permission android:name="android.permission.WAKE_LOCK"/>
+  <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+  <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+  <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+  <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+  <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/>
+  <uses-permission android:name="android.permission.BROADCAST_STICKY"/>
+  <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+  <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
+  <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+  <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+  <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+  <uses-permission android:name="android.permission.BLUETOOTH"/>
+  <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+
+  <uses-feature android:name="android.hardware.camera"/>
+  <uses-feature android:name="android.hardware.camera.autofocus"/>
+
+  <permission
+    android:name="com.wanchang.employee.permission.MIPUSH_RECEIVE"
+    android:protectionLevel="signatureOrSystem"/>
+
+  <uses-permission android:name="com.wanchang.employee.permission.MIPUSH_RECEIVE"/>
+
+  <application
+    android:name=".app.MallApp"
+    android:allowBackup="true"
+    tools:replace="android:icon"
+    android:icon="@mipmap/ic_launcher"
+    android:label="@string/app_name"
+    android:roundIcon="@mipmap/ic_launcher"
+    android:supportsRtl="true"
+    android:theme="@style/AppTheme">
+    <activity
+      android:name=".ui.SplashActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+
+        <category android:name="android.intent.category.LAUNCHER"/>
+      </intent-filter>
+    </activity>
+    <activity
+      android:launchMode="singleTask"
+      android:name=".ui.MainActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name=".ui.GuideActivity"
+      />
+    <activity
+      android:name=".ui.LoginActivity"
+      android:windowSoftInputMode="adjustPan"/>
+
+
+    <!-- salesman start -->
+
+    <activity
+      android:name="com.wanchang.employee.ui.salesman.home.SelectClientActivity"
+      android:windowSoftInputMode="adjustPan"/>
+
+    <activity
+      android:name="com.wanchang.employee.ui.salesman.news.AddressBookActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.salesman.news.GroupListActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.salesman.news.ClientListActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.salesman.news.ClientDetailActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.salesman.news.ColleagueDetailActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.salesman.news.SingleChatSettingActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.salesman.news.GroupChatSettingActivity"
+      android:windowSoftInputMode="adjustPan"/>
+
+    <activity
+      android:name="com.wanchang.employee.ui.salesman.me.ProductManageActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.salesman.me.ProductDetail_SalesmanActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.salesman.me.AreaRecruitListActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.salesman.me.SignActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.salesman.me.SignHistoryActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.salesman.me.BonusManageActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.salesman.me.BonusDetailListActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.salesman.me.BonusApplyActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.salesman.me.MyClientListActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.salesman.me.AddClientActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.salesman.me.MyClientDetailActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.salesman.me.ProductPriceListActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.salesman.me.ClientCreditApplyActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.salesman.me.ClientReturnActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.salesman.me.MyReportActivity"
+      android:windowSoftInputMode="adjustPan"/>
+
+    <activity
+      android:name="com.wanchang.employee.ui.report.SalesmanReportActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <!-- salesman end -->
+
+
+
+
+    <!-- home -->
+    <activity
+      android:name="com.wanchang.employee.ui.home.GetCouponListActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.home.SearchHotActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.home.PromotionListActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.home.NewProductListActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.home.ControlProductListActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.home.HotSalesListActivity"
+      android:windowSoftInputMode="adjustPan"/>
+
+    <!-- classify -->
+    <activity
+      android:launchMode="singleTask"
+      android:name="com.wanchang.employee.ui.classify.ProductListActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.classify.ProductDetailActivity"
+      android:windowSoftInputMode="adjustPan"/>
+
+    <!-- news -->
+    <activity
+      android:name="com.wanchang.employee.ui.news.SalesmanListActivity"
+      android:windowSoftInputMode="adjustPan"/>
+
+
+    <!-- cart -->
+    <activity
+      android:name="com.wanchang.employee.ui.cart.ShopListActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.cart.ConfirmOrderActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.cart.UseCouponListActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.cart.PayOrderActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.cart.PaySuccessActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.cart.CheckoutProductListActivity"
+      android:windowSoftInputMode="adjustPan"/>
+
+    <!-- me -->
+    <activity
+      android:name="com.wanchang.employee.ui.me.SettingActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.me.ModifyPwdActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.me.BindMobileActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.me.CouponListActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.me.OrderListActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.me.OrderDetailActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.me.CollectionListActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.me.HistoryBuyListActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.me.CreditBillListActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.me.BillDetailActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+    android:name="com.wanchang.employee.ui.me.ReturnProductListActivity"
+    android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.me.ApplyReturnProductActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.me.ReturnProductDetailActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.me.OrderProductListActivity"
+      android:windowSoftInputMode="adjustPan"/>
+
+    <!-- push -->
+    <activity
+      android:name="com.wanchang.employee.ui.push.PromotionDetailActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.push.ArticleDetailActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.push.SystemMsgListActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.push.PromotionMsgListActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.push.OrderMsgListActivity"
+      android:windowSoftInputMode="adjustPan"/>
+
+
+    <!-- webview hybird start -->
+    <activity
+      android:name="com.wanchang.employee.web.hybrid.GoActivity"
+      android:theme="@android:style/Theme.NoDisplay"/>
+    <activity
+      android:name="com.wanchang.employee.web.hybrid.PreviewImageActivity"
+      android:theme="@android:style/Theme.NoDisplay"/>
+    <activity
+      android:name="com.wanchang.employee.web.hybrid.ShareActivity"
+      android:theme="@android:style/Theme.NoDisplay"/>
+    <activity
+      android:name="com.wanchang.employee.web.hybrid.UploadImageActivity"
+      android:theme="@android:style/Theme.NoDisplay"/>
+    <activity android:name="com.wanchang.employee.web.WebViewActivity"/>
+    <activity android:name="com.wanchang.employee.web.ZxingCustomActivity"/>
+    <activity
+      android:name="com.github.mzule.activityrouter.router.RouterActivity"
+      android:theme="@android:style/Theme.NoDisplay">
+      <intent-filter>
+        <action android:name="android.intent.action.VIEW"/>
+
+        <category android:name="android.intent.category.DEFAULT"/>
+        <category android:name="android.intent.category.BROWSABLE"/>
+
+        <data android:scheme="wanchang_employee"/>
+      </intent-filter>
+    </activity>
+    <!-- webview hybird end -->
+
+
+    <!-- easemob ui start -->
+
+
+    <!-- 聊天页面 -->
+    <activity
+      android:launchMode="singleTask"
+      android:name="com.wanchang.employee.easemob.ui.ChatActivity"
+      android:screenOrientation="portrait"
+      android:theme="@style/horizontal_slide"
+      android:windowSoftInputMode="adjustResize"/>
+    <!-- 自定义的contextmenu -->
+    <activity
+      android:name="com.wanchang.employee.easemob.ui.ContextMenuActivity"
+      android:screenOrientation="portrait"
+      android:theme="@style/MyDialogStyle"/>
+    <!-- 显示下载大图页面 -->
+    <activity
+      android:name="com.hyphenate.easeui.ui.EaseShowBigImageActivity"
+      android:screenOrientation="portrait"
+      android:theme="@style/horizontal_slide"/>
+    <!-- 下载文件 -->
+    <activity
+      android:name="com.hyphenate.easeui.ui.EaseShowNormalFileActivity"
+      android:screenOrientation="portrait"
+      android:theme="@style/horizontal_slide"/>
+
+    <!-- 语音通话 -->
+    <activity
+      android:name="com.wanchang.employee.easemob.ui.VoiceCallActivity"
+      android:launchMode="singleTask"
+      android:screenOrientation="portrait"
+      android:theme="@style/nornal_style"/>
+    <!-- 视频通话 -->
+    <activity
+      android:name="com.wanchang.employee.easemob.ui.VideoCallActivity"
+      android:configChanges="orientation|keyboardHidden|screenSize"
+      android:launchMode="singleTask"
+      android:screenOrientation="portrait"
+      android:theme="@style/horizontal_slide"/>
+    <activity
+      android:name="com.hyphenate.easeui.ui.EaseShowVideoActivity"
+      android:screenOrientation="portrait"
+      android:theme="@style/horizontal_slide"
+      android:windowSoftInputMode="stateAlwaysHidden"/>
+    <!-- choose video -->
+    <activity
+      android:name="com.wanchang.employee.easemob.ui.ImageGridActivity"
+      android:screenOrientation="portrait"
+      android:theme="@style/horizontal_slide"
+      android:windowSoftInputMode="stateAlwaysHidden"/>
+
+    <!-- easemob ui end -->
+
+
+    <!-- mi push -->
+    <service
+      android:name="com.xiaomi.mipush.sdk.PushMessageHandler"
+      android:enabled="true"
+      android:exported="true"
+      tools:ignore="ExportedService"/>
+    <service
+      android:enabled="true"
+      android:name="com.xiaomi.mipush.sdk.MessageHandleService"/>
+
+    <receiver
+      android:name="com.hyphenate.chat.EMMipushReceiver"
+      android:exported="true"
+      tools:ignore="ExportedReceiver">
+      <intent-filter>
+        <action android:name="com.xiaomi.mipush.RECEIVE_MESSAGE"/>
+      </intent-filter>
+      <intent-filter>
+        <action android:name="com.xiaomi.mipush.MESSAGE_ARRIVED"/>
+      </intent-filter>
+      <intent-filter>
+        <action android:name="com.xiaomi.mipush.ERROR"/>
+      </intent-filter>
+    </receiver>
+    <!-- mi push end -->
+
+
+    <!--华为 HMS Config-->
+    <meta-data
+      android:name="com.huawei.hms.client.appid"
+      android:value="10492024" />
+    <!--华为推送 start-->
+    <receiver android:name="com.hyphenate.chat.EMHWPushReceiver">
+      <intent-filter>
+        <!-- 必须,用于接收 TOKEN -->
+        <action android:name="com.huawei.android.push.intent.REGISTRATION"/>
+        <!-- 必须，用于接收消息 -->
+        <action android:name="com.huawei.android.push.intent.RECEIVE"/>
+        <!-- 可选，用于点击通知栏或通知栏上的按钮后触发 onEvent 回调 -->
+        <action android:name="com.huawei.android.push.intent.CLICK"/>
+        <!-- 可选，查看 PUSH 通道是否连接，不查看则不需要 -->
+        <action android:name="com.huawei.intent.action.PUSH_STATE"/>
+      </intent-filter>
+    </receiver>
+
+    <receiver android:name="com.huawei.hms.support.api.push.PushEventReceiver">
+      <intent-filter>
+        <!-- 接收通道发来的通知栏消息，兼容老版本 PUSH -->
+        <action android:name="com.huawei.intent.action.PUSH"/>
+      </intent-filter>
+    </receiver>
+    <!-- huawei push end -->
+
+
+    <!-- 设置环信应用的appkey -->
+    <meta-data
+      android:name="EASEMOB_APPKEY"
+      android:value="1184171012115790#wcim"/>
+    <!-- 声明sdk所需的service -->
+    <service
+      android:name="com.hyphenate.chat.EMChatService"
+      android:exported="true"
+      tools:ignore="ExportedService"/>
+    <service
+      android:name="com.hyphenate.chat.EMJobService"
+      android:exported="true"
+      android:permission="android.permission.BIND_JOB_SERVICE"/>
+
+    <!-- 声明sdk所需的receiver -->
+    <receiver android:name="com.hyphenate.chat.EMMonitorReceiver">
+      <intent-filter>
+        <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+
+        <data android:scheme="package"/>
+      </intent-filter>
+      <!-- 可选filter -->
+      <intent-filter>
+        <action android:name="android.intent.action.BOOT_COMPLETED"/>
+        <action android:name="android.intent.action.USER_PRESENT"/>
+      </intent-filter>
+    </receiver>
+
+    <!-- 百度地图所需的service -->
+    <service android:name="com.amap.api.location.APSService"></service>
+    <meta-data
+      android:name="com.amap.api.v2.apikey"
+      android:value="6fb60ff0b2bc8b836c9d9ac5456d7d2a"/>
+    <!-- umeng appkey，可忽略 -->
+    <meta-data
+      android:name="UMENG_APPKEY"
+      android:value="5a260d4a8f4a9d673e000100"/>
+    <meta-data
+      android:name="UMENG_MESSAGE_SECRET"
+      android:value="cac2ee32b3fbd7b059a94c9edfbc6aad">
+    </meta-data>
+    <meta-data
+      android:name="UMENG_CHANNEL"
+      android:value="wanchang_employee"/>
+
+  </application>
+
+</manifest>

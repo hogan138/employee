@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:background="@color/color_ff"
+  android:padding="12dp">
+
+  <TextView
+    android:id="@+id/tv_price"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="54500.00"
+    android:textColor="@color/color_336"
+    android:textSize="18sp"
+    />
+
+  <TextView
+    android:id="@+id/tv_date"
+    android:layout_below="@+id/tv_price"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:gravity="right"
+    android:text="记账周期 2017/08/21 - 2017/09/20"
+    android:textColor="@color/color_b3"
+    android:textSize="12sp"
+    />
+
+  <View
+    android:id="@+id/line"
+    android:layout_below="@+id/tv_date"
+    android:layout_width="match_parent"
+    android:layout_marginTop="12dp"
+    android:layout_height="1dp"
+    android:background="@color/color_e5"/>
+
+  <TextView
+    android:id="@+id/tv_repayment_date"
+    android:layout_below="@+id/line"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp"
+    android:gravity="center"
+    android:text="最后还款日：2017年10月7日"
+    android:textColor="@color/color_4d"
+    android:textSize="14sp"
+    />
+
+
+</RelativeLayout>

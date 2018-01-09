@@ -1,0 +1,154 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  tools:context="com.wanchang.employee.ui.PurchaseFragment">
+
+  <include
+    android:id="@+id/rl_topbar"
+    layout="@layout/purchase_search_topbar"/>
+
+
+
+    <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.youth.banner.Banner
+          android:id="@+id/banner"
+          android:layout_width="match_parent"
+          android:layout_height="120dp" />
+
+        <android.support.v7.widget.RecyclerView
+          android:id="@+id/rv_category_link"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          />
+
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="120dp">
+          <ImageView
+            android:id="@+id/iv_recommend_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:src="@drawable/ic_default_image"/>
+          <ImageView
+            android:id="@+id/iv_recommend_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_default_image"/>
+        </LinearLayout>
+
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="120dp">
+          <ImageView
+            android:id="@+id/iv_recommend_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_default_image"/>
+          <ImageView
+            android:id="@+id/iv_recommend_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:src="@drawable/ic_default_image"/>
+        </LinearLayout>
+
+        <View
+          android:layout_width="match_parent"
+          android:layout_height="16dp"
+          android:background="@color/color_f0"/>
+
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="16dp"
+          android:layout_marginBottom="16dp"
+          android:gravity="center">
+          <TextView
+            android:layout_width="25dp"
+            android:layout_height="1dp"
+            android:background="@color/color_9a2"/>
+          <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:textColor="@color/color_9a2"
+            android:textSize="14sp"
+            android:text="限时抢购"/>
+          <TextView
+            android:layout_width="25dp"
+            android:layout_height="1dp"
+            android:background="@color/color_9a2"/>
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+          android:id="@+id/rv_time_limit_sale"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          />
+
+        <View
+          android:layout_width="match_parent"
+          android:layout_height="16dp"
+          android:background="@color/color_f0"/>
+
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="16dp"
+          android:layout_marginBottom="16dp"
+          android:gravity="center">
+          <TextView
+            android:layout_width="25dp"
+            android:layout_height="1dp"
+            android:background="@color/color_9a2"/>
+          <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:textColor="@color/color_9a2"
+            android:textSize="14sp"
+            android:text="热卖推荐"/>
+          <TextView
+            android:layout_width="25dp"
+            android:layout_height="1dp"
+            android:background="@color/color_9a2"/>
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+          android:id="@+id/rv_hot_recommend"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          />
+
+        <View
+          android:layout_width="match_parent"
+          android:layout_height="16dp"
+          android:background="@color/color_f0"/>
+
+        <android.support.v7.widget.RecyclerView
+          android:id="@+id/rv_drug"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          />
+
+      </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>

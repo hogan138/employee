@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:background="@color/white"
+  android:orientation="vertical">
+
+  <TextView
+    android:id="@+id/item_work_menu_title_tv"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="9dp"
+    android:layout_marginBottom="9dp"
+    android:layout_marginLeft="12dp"
+    android:textColor="@color/color_66"
+    android:text="地点"/>
+
+  <View
+    android:layout_width="match_parent"
+    android:layout_height="0.5dp"
+    android:background="@color/color_cee" />
+
+  <android.support.v7.widget.RecyclerView
+    android:id="@+id/item_work_menu_data_rv"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
+
+</LinearLayout>

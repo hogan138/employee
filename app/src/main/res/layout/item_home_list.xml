@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:id="@+id/rl_coupon_root"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:orientation="vertical"
+  android:paddingLeft="16dp"
+  android:paddingRight="16dp"
+  android:paddingTop="12dp"
+  android:background="@color/color_ff">
+
+  <LinearLayout
+    android:id="@+id/ll_product_img"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center">
+    <ImageView
+      android:id="@+id/iv_pic"
+      android:layout_width="100dp"
+      android:layout_height="100dp"
+      android:scaleType="center"
+      android:src="@drawable/ic_default_image"/>
+  </LinearLayout>
+
+  <TextView
+    android:id="@+id/tv_title"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp"
+    android:lines="2"
+    android:maxLines="2"
+    android:ellipsize="end"
+    android:text="琥珀酸美托"
+    android:textSize="12sp"
+    android:textColor="@color/color_33"
+    />
+  <TextView
+    android:id="@+id/tv_validity"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="2dp"
+    android:text="有效期至: 2018/06/30"
+    android:textSize="10sp"
+    android:textColor="@color/color_99"
+    />
+  <TextView
+    android:id="@+id/tv_price"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:text="登录可见"
+    android:textSize="15sp"
+    android:textColor="#F23434"
+    />
+
+
+</LinearLayout>

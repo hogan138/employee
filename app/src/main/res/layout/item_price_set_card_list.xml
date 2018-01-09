@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:background="@color/color_ff"
+  android:padding="12dp">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <TextView
+      android:id="@+id/tv_product_title"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textSize="16sp"
+      android:textColor="@color/color_1a"
+      android:text="复方乙酰水杨酸片"/>
+    <TextView
+      android:id="@+id/tv_product_manufacture"
+      android:layout_marginTop="3dp"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textSize="14sp"
+      android:textColor="@color/color_80"
+      android:text="山东方明药业集团股份有限公司"/>
+    <TextView
+      android:id="@+id/tv_product_validity"
+      android:layout_marginTop="3dp"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textSize="14sp"
+      android:textColor="@color/color_80"
+      android:text="有效期至: 2018年06月30日"/>
+
+    <TextView
+      android:id="@+id/tv_product_specs"
+      android:layout_marginTop="3dp"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textSize="13sp"
+      android:textColor="@color/color_80"
+      android:text="规格：40mg*7片*4板"/>
+    <TextView
+      android:visibility="gone"
+      android:id="@+id/tv_product_oprice"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="3dp"
+      android:textSize="13sp"
+      android:textColor="@color/color_80"
+      android:text="原价：￥8.20"/>
+  </LinearLayout>
+
+
+  <TextView
+    android:id="@+id/tv_client_price"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentRight="true"
+    android:layout_marginTop="24dp"
+    android:textSize="14sp"
+    android:textColor="@color/color_80"
+    android:text="一客一价：￥10.00"/>
+
+  <TextView
+    android:layout_below="@+id/tv_client_price"
+    android:id="@+id/tv_price_op"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentRight="true"
+    android:layout_marginTop="36dp"
+    android:textSize="14sp"
+    android:textColor="@color/color_4d"
+    android:text="修改"/>
+
+</RelativeLayout>

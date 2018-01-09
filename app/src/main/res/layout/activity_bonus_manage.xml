@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:orientation="vertical">
+
+  <include layout="@layout/common_topbar" />
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/bg_my_gradient_shape">
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textColor="@color/color_ff"
+      android:textSize="15sp"
+      android:text="未提佣金"/>
+
+    <TextView
+      android:id="@+id/tv_un_cash"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="16dp"
+      android:textColor="@color/color_ff"
+      android:textSize="50sp"
+      android:text="5446.00元"/>
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="16dp"
+      android:orientation="horizontal">
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_ff"
+        android:textSize="13sp"
+        android:text="可提现"/>
+
+      <TextView
+        android:id="@+id/tv_can_cash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:textColor="@color/color_ff"
+        android:textSize="18sp"
+        android:text="5426.00元"/>
+
+      <TextView
+        android:id="@+id/tv_bonus_apply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="56dp"
+        android:drawableLeft="@drawable/icon_cashout"
+        android:drawablePadding="6dp"
+        android:textColor="@color/color_ff"
+        android:textSize="14sp"
+        android:text="提现"/>
+    </LinearLayout>
+
+
+    <TextView
+      android:id="@+id/tv_cash_total"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="36dp"
+      android:textColor="@color/color_ff"
+      android:textSize="14sp"
+      android:text="已提佣金：544541.00元"/>
+
+
+  </LinearLayout>
+
+  <com.allen.library.SuperTextView
+    android:id="@+id/tv_bonus_detail"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:paddingLeft="4dp"
+    app:sLeftTextString="查看佣金明细"
+    app:sRightIconRes="@drawable/icon_arrow_right"
+    />
+
+
+</LinearLayout>
+
