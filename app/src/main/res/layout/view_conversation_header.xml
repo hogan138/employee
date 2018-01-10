@@ -22,7 +22,7 @@
       <ImageView
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:src="@drawable/avatar_purchasinginfo"/>
+        android:src="@drawable/msg_check"/>
       <ImageView
         android:visibility="gone"
         android:id="@+id/iv_20"
@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:textSize="17sp"
         android:textColor="@color/color_1a"
-        android:text="促销资讯"/>
+        android:text="消息审核"/>
       <TextView
         android:id="@+id/tv_promotion_time"
         android:layout_width="wrap_content"
@@ -128,11 +128,13 @@
   </RelativeLayout>
 
   <View
+    android:visibility="gone"
     android:layout_width="match_parent"
     android:layout_height="1dp"
     android:background="@color/color_e5"/>
 
   <RelativeLayout
+    android:visibility="gone"
     android:id="@+id/rl_order"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"

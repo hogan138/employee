@@ -3,6 +3,56 @@
   android:layout_height="match_parent"
   android:orientation="vertical">
 
+ <RelativeLayout
+   android:layout_width="match_parent"
+   android:layout_height="48dp"
+   android:background="@color/color_ff">
+
+  <TextView
+    android:id="@+id/tv_topbar_left"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_centerVertical="true"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="8dp"
+    android:drawableLeft="@drawable/nav_back"
+    android:textColor="@color/color_1a"
+    android:textSize="16sp"/>
+
+  <TextView
+    android:id="@+id/tv_topbar_title"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:drawableRight="@drawable/down"
+    android:drawablePadding="3dp"
+    android:text=""
+    android:layout_centerInParent="true"
+    android:gravity="center"
+    android:maxLines="1"
+    android:ellipsize="end"
+    android:textColor="@color/color_1a"
+    android:textSize="18sp"/>
+
+  <TextView
+    android:id="@+id/tv_topbar_right"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentRight="true"
+    android:layout_centerVertical="true"
+    android:layout_marginRight="16dp"
+    android:layout_marginLeft="4dp"
+    android:textColor="@color/color_336"
+    android:textSize="16sp"/>
+
+  <View
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:layout_alignParentBottom="true"
+    android:background="@color/color_e6"/>
+
+ </RelativeLayout>
+
  <FrameLayout
    android:id="@+id/fl_my_container"
    android:layout_width="match_parent"

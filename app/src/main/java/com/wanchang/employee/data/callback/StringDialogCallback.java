@@ -40,11 +40,11 @@ public abstract class StringDialogCallback extends StringCallback {
 
         String department_id = ACache.get(activity).getAsString(Constants.KEY_DEPARTMENT_ID);
         if (!TextUtils.isEmpty(department_id)) {
-            request.headers("department-id", "600");
+            request.headers("department-id", department_id);
         }
         String role_id = ACache.get(activity).getAsString(Constants.KEY_ROLE_ID);
         if (!TextUtils.isEmpty(role_id)) {
-            request.headers("role-id", "602");
+            request.headers("role-id", role_id);
         }
     }
 

@@ -149,7 +149,7 @@ public class BindMobileActivity extends BaseActivity{
       ToastUtils.showShort("验证码不能为空");
       return;
     }
-    OkGo.<String>put(MallAPI.USER+"/update")
+    OkGo.<String>post(MallAPI.USER+"/update-password")
         .tag(this)
         .params("mobile", account)
         .params("captcha_id", captcha_id)

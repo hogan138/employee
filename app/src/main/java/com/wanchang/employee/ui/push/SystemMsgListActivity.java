@@ -109,7 +109,7 @@ public class SystemMsgListActivity extends BaseActivity{
   }
 
   private void loadData() {
-    OkGo.<String>get(MallAPI.MESSAGE)
+    OkGo.<String>get(MallAPI.IM_MESSAGE)
         .tag(this)
         .params("category", 10)
         .params("page", currentPage)

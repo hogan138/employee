@@ -1,0 +1,55 @@
+package com.wanchang.employee.ui.push;
+
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
+import android.widget.TextView;
+import butterknife.BindView;
+import butterknife.OnClick;
+import com.flyco.tablayout.SlidingTabLayout;
+import com.wanchang.employee.R;
+import com.wanchang.employee.app.Constants;
+import com.wanchang.employee.ui.base.BaseActivity;
+import com.wanchang.employee.util.ACache;
+import java.util.ArrayList;
+
+public class MsgCheckListActivity extends BaseActivity{
+
+  @BindView(R.id.tv_topbar_title)
+  TextView mTitle;
+
+  @BindView(R.id.tl)
+  SlidingTabLayout tabLayout;
+  @BindView(R.id.vp)
+  ViewPager vp;
+
+
+  private final String[] mTitles = {"全部", "待审核"};
+
+  @Override
+  protected int getLayoutResId() {
+    return R.layout.activity_msg_check_list;
+  }
+
+  @Override
+  protected void initData() {
+    ACache.get(mContext).remove(Constants.KEY_NEW_MSG_2);
+
+  }
+
+  @Override
+  protected void initView() {
+    mTitle.setText("消息审核");
+
+    ArrayList<Fragment> mFragments = new ArrayList<>();
+    mFragments.add(MsgCheckCard0Fragment.newInstance(""));
+    mFragments.add(MsgCheckCard1Fragment.newInstance(""));
+
+    tabLayout.setViewPager(vp, mTitles, mContext, mFragments);
+
+  }
+
+  @OnClick(R.id.tv_topbar_left)
+  public void onGoBack() {
+    finish();
+  }
+}

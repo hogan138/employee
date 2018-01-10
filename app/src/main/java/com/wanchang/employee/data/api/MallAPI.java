@@ -16,8 +16,8 @@ public class MallAPI {
   public static final String AUTH_ACCOUNT_LOGIN = SERVER + "/auth/login";
   public static final String AUTH_MOBILE_LOGIN = SERVER + "/auth/mobile-login";
   public static final String AUTH_CAPTCHA = SERVER + "/auth/captcha";
-  public static final String USER_LOGOUT = SERVER + "/user/logout";
-  public static final String USER = SERVER + "/user";
+  public static final String USER_LOGOUT = SERVER + "/user/user/logout";
+  public static final String USER = SERVER + "/user/user";
   //classify
   public static final String PRODUCT_CATEGORY = SERVER + "/product-category";
   public static final String PRODUCT_LIST = SERVER + "/product";
@@ -90,6 +90,7 @@ public class MallAPI {
 
 
 
+  /*** work */
   public static final String USER_DEPARTMENT_LIST = SERVER + "/user/user/department-list";
   public static final String CHART_PRODUCT_HEADER = SERVER + "/system/chart/product-header";
   public static final String CHART_PRODUCT_CHART = SERVER + "/system/chart/product-chart";
@@ -101,6 +102,17 @@ public class MallAPI {
   public static final String CHART_DEP_CHART = SERVER + "/system/chart/dep-chart";
   public static final String CHART_CLIENT_HEADER = SERVER + "/system/chart/client-header";
   public static final String SYS_CHART_CLIENT_CHART = SERVER + "/system/chart/client-chart";
+
+  public static final String USER_USER_ADDRESS_BOOK = SERVER + "/user/user/address-book";
+  public static final String GROUP_USER_INFO = SERVER + "/im/group/user-info";
+  public static final String GROUP_GROUP_USER = SERVER + "/im/group/group-user";
+
+  public static final String SYS_BIND_DEVICE_TOKEN = SERVER + "/system/app/bind-device-token";
+
+  public static final String IM_MESSAGE_LATEST = SERVER + "/im/message/latest";
+  public static final String IM_MESSAGE = SERVER + "/im/message";
+  public static final String USER_USER_NOTIFICATION = SERVER + "/user/user-notification";
+  public static final String USER_USER_NOTIFICATION_CHECK = SERVER + "/user/user-notification/check";
 
 
   public static final String NEWS = "http://apis.baidu.com/showapi_open_bus/channel_news/search_news";

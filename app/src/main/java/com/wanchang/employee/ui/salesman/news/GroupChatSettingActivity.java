@@ -57,7 +57,7 @@ public class GroupChatSettingActivity extends BaseActivity {
         helper.setText(R.id.tv_name, item.getName());
       }
     });
-    mGroupMemberRv.setLayoutManager(new GridLayoutManager(mContext, 6));
+    mGroupMemberRv.setLayoutManager(new GridLayoutManager(mContext, 5));
   }
 
   @Override
@@ -68,7 +68,7 @@ public class GroupChatSettingActivity extends BaseActivity {
   }
 
   public void getDetail() {
-    OkGo.<String>get(MallAPI.USER_GROUP_USER)
+    OkGo.<String>get(MallAPI.GROUP_GROUP_USER)
         .tag(this)
         .params("im_group_id", imGroupId)
         .execute(new StringDialogCallback(mContext) {

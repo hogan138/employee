@@ -24,8 +24,8 @@ import com.wanchang.employee.data.entity.Message;
 import com.wanchang.employee.easemob.ui.ConversationListFragment;
 import com.wanchang.employee.ui.base.BaseFragment;
 import com.wanchang.employee.ui.eventbus.RefreshPushMessageEvent;
+import com.wanchang.employee.ui.push.MsgCheckListActivity;
 import com.wanchang.employee.ui.push.OrderMsgListActivity;
-import com.wanchang.employee.ui.push.PromotionMsgListActivity;
 import com.wanchang.employee.ui.push.SystemMsgListActivity;
 import com.wanchang.employee.util.ACache;
 import java.text.SimpleDateFormat;
@@ -170,7 +170,7 @@ public class ConversationFragment extends BaseFragment {
     promotionRl.setOnClickListener(new OnClickListener() {
       @Override
       public void onClick(View view) {
-        startActivity(new Intent(getActivity(), PromotionMsgListActivity.class));
+        startActivity(new Intent(getActivity(), MsgCheckListActivity.class));
       }
     });
     systemRl.setOnClickListener(new OnClickListener() {
@@ -185,7 +185,7 @@ public class ConversationFragment extends BaseFragment {
         startActivity(new Intent(getActivity(), OrderMsgListActivity.class));
       }
     });
-    OkGo.<String>get(MallAPI.MESSAGE_LATEST)
+    OkGo.<String>get(MallAPI.IM_MESSAGE_LATEST)
         .tag(this)
         .execute(new StringDialogCallback(getActivity()) {
 
@@ -194,7 +194,7 @@ public class ConversationFragment extends BaseFragment {
             super.onSuccess(response);
             if (response.code() == 200) {
               JSONObject jsonObj = JSON.parseObject(response.body());
-              Message msg1 = JSON.parseObject(jsonObj.getString("promotion"), Message.class);
+              Message msg1 = JSON.parseObject(jsonObj.getString("notification"), Message.class);
               if (msg1.getTitle() != null) {
                 //promotionTitleTv.setText(msg1.getTitle());
                 promotionContentTv.setText(msg1.getTitle());
@@ -206,12 +206,12 @@ public class ConversationFragment extends BaseFragment {
                 systemContentTv.setText(msg2.getTitle());
                 systemTimeTv.setText(new SimpleDateFormat("MM-dd HH:mm").format(new Date(msg2.getSent_at()*1000)));
               }
-              Message msg3 = JSON.parseObject(jsonObj.getString("order"), Message.class);
-              if (msg3.getTitle() != null) {
-                //orderTitleTv.setText(msg3.getTitle());
-                orderContentTv.setText(msg3.getTitle());
-                orderTimeTv.setText(new SimpleDateFormat("MM-dd HH:mm").format(new Date(msg3.getSent_at() * 1000)));
-              }
+//              Message msg3 = JSON.parseObject(jsonObj.getString("order"), Message.class);
+//              if (msg3.getTitle() != null) {
+//                //orderTitleTv.setText(msg3.getTitle());
+//                orderContentTv.setText(msg3.getTitle());
+//                orderTimeTv.setText(new SimpleDateFormat("MM-dd HH:mm").format(new Date(msg3.getSent_at() * 1000)));
+//              }
             }
           }
         });

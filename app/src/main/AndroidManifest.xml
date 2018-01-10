@@ -69,6 +69,15 @@
       android:name=".ui.LoginActivity"
       android:windowSoftInputMode="adjustPan"/>
 
+    <!-- work start -->
+    <activity
+      android:name="com.wanchang.employee.ui.report.SalesmanReportActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.work.SelectRoleActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <!-- work end -->
+
 
     <!-- salesman start -->
 
@@ -144,9 +153,6 @@
       android:name="com.wanchang.employee.ui.salesman.me.MyReportActivity"
       android:windowSoftInputMode="adjustPan"/>
 
-    <activity
-      android:name="com.wanchang.employee.ui.report.SalesmanReportActivity"
-      android:windowSoftInputMode="adjustPan"/>
     <!-- salesman end -->
 
 
@@ -257,6 +263,9 @@
       android:windowSoftInputMode="adjustPan"/>
     <activity
       android:name="com.wanchang.employee.ui.push.ArticleDetailActivity"
+      android:windowSoftInputMode="adjustPan"/>
+    <activity
+      android:name="com.wanchang.employee.ui.push.MsgCheckListActivity"
       android:windowSoftInputMode="adjustPan"/>
     <activity
       android:name="com.wanchang.employee.ui.push.SystemMsgListActivity"
@@ -439,14 +448,14 @@
     <service android:name="com.amap.api.location.APSService"></service>
     <meta-data
       android:name="com.amap.api.v2.apikey"
-      android:value="6fb60ff0b2bc8b836c9d9ac5456d7d2a"/>
+      android:value=""/>
     <!-- umeng appkey，可忽略 -->
     <meta-data
       android:name="UMENG_APPKEY"
-      android:value="5a260d4a8f4a9d673e000100"/>
+      android:value="5a55ceb0b27b0a30a600002e"/>
     <meta-data
       android:name="UMENG_MESSAGE_SECRET"
-      android:value="cac2ee32b3fbd7b059a94c9edfbc6aad">
+      android:value="9e8139ed9fa5662631435a248d54af84">
     </meta-data>
     <meta-data
       android:name="UMENG_CHANNEL"

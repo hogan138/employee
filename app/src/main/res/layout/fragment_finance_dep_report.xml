@@ -11,7 +11,7 @@
     android:paddingTop="8dp"
     android:paddingBottom="8dp"
     android:background="@color/color_ff"
-    tl:tl_tab_space_equal="true"
+    tl:tl_tab_space_equal="false"
     tl:tl_indicator_height="1dp"
     tl:tl_indicator_margin_left="36dp"
     tl:tl_indicator_margin_right="36dp"

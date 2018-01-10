@@ -284,11 +284,8 @@ public class LoginActivity extends BaseActivity {
           LogUtils.e(TAG, "update current user nick fail");
         }
 
-        //bindDeviceToken();
+        bindDeviceToken();
 
-        ToastUtils.showShort("登录成功");
-        startActivity(new Intent(mContext, MainActivity.class));
-        finish();
       }
 
       @Override
@@ -315,7 +312,7 @@ public class LoginActivity extends BaseActivity {
     } else {
       company_id = -1;
     }
-    OkGo.<String>post(MallAPI.BIND_DEVICE_TOKEN)
+    OkGo.<String>post(MallAPI.SYS_BIND_DEVICE_TOKEN)
         .tag(this)
         .params("device_token", PushAgent.getInstance(mContext).getRegistrationId())
         .params("company_id", company_id)

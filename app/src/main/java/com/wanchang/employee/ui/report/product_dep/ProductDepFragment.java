@@ -4,8 +4,6 @@ package com.wanchang.employee.ui.report.product_dep;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.view.View;
-import android.widget.TextView;
 import butterknife.BindView;
 import com.flyco.tablayout.SlidingTabLayout;
 import com.wanchang.employee.R;
@@ -17,11 +15,6 @@ import java.util.ArrayList;
  * A simple {@link Fragment} subclass.
  */
 public class ProductDepFragment extends BaseFragment {
-
-  @BindView(R.id.tv_topbar_title)
-  TextView mTitleTv;
-  @BindView(R.id.tv_topbar_left)
-  TextView mLeftTv;
 
   @BindView(R.id.tl)
   SlidingTabLayout tabLayout;
@@ -59,13 +52,12 @@ public class ProductDepFragment extends BaseFragment {
     mFragments.add(Card1Fragment.newInstance(""));
     mFragments.add(Card2Fragment.newInstance(""));
 
-    tabLayout.setViewPager(vp, mTitles, mContext, mFragments);
+    tabLayout.setViewPagerBugFix(vp, mTitles, getChildFragmentManager(), mFragments);
   }
 
   @Override
   protected void initView() {
-    mLeftTv.setVisibility(View.GONE);
-    mTitleTv.setText("报表");
+
   }
 
 }

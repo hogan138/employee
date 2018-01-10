@@ -5,6 +5,7 @@ import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.OnClick;
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.blankj.utilcode.util.LogUtils;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.easeui.utils.EaseCommonUtils;
@@ -53,7 +54,7 @@ public class SingleChatSettingActivity extends BaseActivity {
 
 
   public void getDetail() {
-    OkGo.<String>get(MallAPI.USER_USER_INFO)
+    OkGo.<String>get(MallAPI.GROUP_USER_INFO)
         .tag(this)
         .params("im_account", imAccount)
         .execute(new StringDialogCallback(mContext) {
@@ -62,7 +63,8 @@ public class SingleChatSettingActivity extends BaseActivity {
           public void onSuccess(Response<String> response) {
             super.onSuccess(response);
             if (response.code() == 200) {
-              User user = JSON.parseObject(response.body(), User.class);
+              JSONObject jsonObj = JSON.parseObject(response.body());
+              User user = JSON.parseObject(jsonObj.getString("user"), User.class);
               GlideApp.with(mContext).load(MallAPI.IMG_SERVER + user.getPic()).placeholder(R.drawable.avatar88x88).into(mPicCiv);
               mNameTv.setText(user.getName());
             }

@@ -28,6 +28,7 @@ public class Constants {
   public static final String KEY_NEW_MSG_3 = "new_msg_3_key";
   public static final String KEY_CLIENT_ID = "client_id_key";
   public static final String KEY_CLIENT_NAME = "client_name_key";
+  public static final String KEY_DEPARTMENT_TYPE = "department_type_key";
   public static final String KEY_DEPARTMENT_ID = "department_id_key";
   public static final String KEY_ROLE_ID = "role_id_key";
 

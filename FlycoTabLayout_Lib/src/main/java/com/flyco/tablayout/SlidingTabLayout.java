@@ -222,6 +222,23 @@ public class SlidingTabLayout extends HorizontalScrollView implements ViewPager.
         notifyDataSetChanged();
     }
 
+    public void setViewPagerBugFix(ViewPager vp, String[] titles, FragmentManager fa, ArrayList<Fragment> fragments) {
+        if (vp == null) {
+            throw new IllegalStateException("ViewPager can not be NULL !");
+        }
+
+        if (titles == null || titles.length == 0) {
+            throw new IllegalStateException("Titles can not be EMPTY !");
+        }
+
+        this.mViewPager = vp;
+        this.mViewPager.setAdapter(new InnerPagerAdapter(fa, fragments, titles));
+
+        this.mViewPager.removeOnPageChangeListener(this);
+        this.mViewPager.addOnPageChangeListener(this);
+        notifyDataSetChanged();
+    }
+
     /** 更新数据 */
     public void notifyDataSetChanged() {
         mTabsContainer.removeAllViews();

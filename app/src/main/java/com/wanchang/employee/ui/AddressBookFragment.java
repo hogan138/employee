@@ -100,7 +100,7 @@ public class AddressBookFragment extends BaseFragment {
   }
 
   public void getAddressBook() {
-    OkGo.<String>get(MallAPI.USER_ADDRESS_BOOK)
+    OkGo.<String>get(MallAPI.USER_USER_ADDRESS_BOOK)
         .tag(this)
         .execute(new StringDialogCallback(mContext) {
 
@@ -113,7 +113,7 @@ public class AddressBookFragment extends BaseFragment {
               groupList = JSON.parseArray(jsonObj.getString("group_list"), Group.class);
               clientList = JSON.parseArray(jsonObj.getString("client_list"), Client.class);
 
-              mClientCountStv.setLeftString("客户(" +jsonObj.getJSONArray("client_list").size() + ")");
+              //mClientCountStv.setLeftString("客户(" +jsonObj.getJSONArray("client_list").size() + ")");
 
               ArrayList<MultiItemEntity> res = new ArrayList<MultiItemEntity>();
               JSONArray items0Array = jsonObj.getJSONArray("organization");

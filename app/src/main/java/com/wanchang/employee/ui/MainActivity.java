@@ -20,6 +20,7 @@ import com.flyco.tablayout.listener.CustomTabEntity;
 import com.hyphenate.EMMessageListener;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMMessage;
+import com.umeng.message.PushAgent;
 import com.wanchang.employee.R;
 import com.wanchang.employee.app.Constants;
 import com.wanchang.employee.app.MallApp;
@@ -92,6 +93,8 @@ public class MainActivity extends BaseActivity {
       public void onReceive(Context context, Intent intent) {
         ACache.get(mContext).clear();
         DemoHelper.getInstance().logout(true, null);
+        startActivity(new Intent(context, LoginActivity.class));
+        finish();
       }
     };
     registerReceiver(appExitReceiver, new IntentFilter(Constants.APP_EXIT_ACTION));
@@ -108,6 +111,7 @@ public class MainActivity extends BaseActivity {
     LogUtils.e("-------"+MallApp.getInstance().getGroupId());
     LogUtils.e("-------"+DeviceUtils.getManufacturer()+","+DeviceUtils.getModel());
     LogUtils.e("-------"+MallApp.getInstance().getUserId());
+    LogUtils.e("-------"+PushAgent.getInstance(mContext).getRegistrationId());
     // runtime permission for android 6.0, just require all permissions here for simple
     requestPermissions();
   }

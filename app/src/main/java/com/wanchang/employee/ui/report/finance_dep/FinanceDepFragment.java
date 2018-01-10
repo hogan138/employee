@@ -4,8 +4,6 @@ package com.wanchang.employee.ui.report.finance_dep;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.view.View;
-import android.widget.TextView;
 import butterknife.BindView;
 import com.flyco.tablayout.SlidingTabLayout;
 import com.wanchang.employee.R;
@@ -20,11 +18,6 @@ import java.util.ArrayList;
  * A simple {@link Fragment} subclass.
  */
 public class FinanceDepFragment extends BaseFragment {
-
-  @BindView(R.id.tv_topbar_title)
-  TextView mTitleTv;
-  @BindView(R.id.tv_topbar_left)
-  TextView mLeftTv;
 
   @BindView(R.id.tl)
   SlidingTabLayout tabLayout;
@@ -52,7 +45,7 @@ public class FinanceDepFragment extends BaseFragment {
 
   @Override
   protected int getLayoutResId() {
-    return R.layout.fragment_product_dep_report;
+    return R.layout.fragment_finance_dep_report;
   }
 
   @Override
@@ -65,13 +58,12 @@ public class FinanceDepFragment extends BaseFragment {
     mFragments.add(Card1Fragment.newInstance(""));
     mFragments.add(Card2Fragment.newInstance(""));
 
-    tabLayout.setViewPager(vp, mTitles, mContext, mFragments);
+    tabLayout.setViewPagerBugFix(vp, mTitles, getChildFragmentManager(), mFragments);
   }
 
   @Override
   protected void initView() {
-    mLeftTv.setVisibility(View.GONE);
-    mTitleTv.setText("报表");
+
   }
 
 }

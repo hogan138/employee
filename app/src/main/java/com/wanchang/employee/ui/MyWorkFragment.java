@@ -6,25 +6,30 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.OnClick;
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
+import com.allen.library.SuperTextView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.Response;
+import com.mylhyl.circledialog.CircleDialog;
 import com.wanchang.employee.R;
+import com.wanchang.employee.app.Constants;
+import com.wanchang.employee.app.MallApp;
 import com.wanchang.employee.data.api.MallAPI;
 import com.wanchang.employee.data.callback.StringDialogCallback;
+import com.wanchang.employee.data.entity.DepRole;
 import com.wanchang.employee.data.entity.User;
 import com.wanchang.employee.ui.base.BaseFragment;
+import com.wanchang.employee.ui.me.BindMobileActivity;
+import com.wanchang.employee.ui.me.ModifyPwdActivity;
 import com.wanchang.employee.ui.me.SettingActivity;
 import com.wanchang.employee.util.GlideApp;
 import de.hdodenhof.circleimageview.CircleImageView;
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -38,10 +43,13 @@ public class MyWorkFragment extends BaseFragment {
   @BindView(R.id.tv_name)
   TextView mNameTv;
 
+  @BindView(R.id.stv_clear_cache)
+  SuperTextView mClearCacheStv;
+
   @BindView(R.id.rv_dep)
   RecyclerView mDepRv;
 
-  private BaseQuickAdapter<String, BaseViewHolder> mDepAdapter;
+  private BaseQuickAdapter<DepRole, BaseViewHolder> mDepAdapter;
 
   private static final String BUNDLE_ARGS = "bundle_args";
 
@@ -65,11 +73,11 @@ public class MyWorkFragment extends BaseFragment {
 
   @Override
   protected void initData() {
-    mDepRv.setLayoutManager(new GridLayoutManager(mContext, 3));
-    mDepRv.setAdapter(mDepAdapter = new BaseQuickAdapter<String, BaseViewHolder>(R.layout.item_me_dep) {
+    mDepRv.setLayoutManager(new GridLayoutManager(mContext, 4));
+    mDepRv.setAdapter(mDepAdapter = new BaseQuickAdapter<DepRole, BaseViewHolder>(R.layout.item_me_dep) {
       @Override
-      protected void convert(BaseViewHolder helper, String item) {
-        helper.setText(R.id.tv_title, item);
+      protected void convert(BaseViewHolder helper, DepRole item) {
+        helper.setText(R.id.tv_title, item.getDepartment().getName());
       }
     });
   }
@@ -87,7 +95,8 @@ public class MyWorkFragment extends BaseFragment {
 
 
   private void loadData() {
-    OkGo.<String>get(MallAPI.USER+"/profile")
+    getDepList();
+    OkGo.<String>get(MallAPI.USER+"/"+ MallApp.getInstance().getUserId())
         .tag(this)
         .execute(new StringDialogCallback(mContext) {
 
@@ -95,24 +104,86 @@ public class MyWorkFragment extends BaseFragment {
           public void onSuccess(Response<String> response) {
             super.onSuccess(response);
             if (response.code() == 200) {
-              JSONObject jsonObj = JSON.parseObject(response.body());
-              User user = JSON.parseObject(jsonObj.getString("user_info"), User.class);
+              User user = JSON.parseObject(response.body(), User.class);
               GlideApp.with(mContext).load(MallAPI.IMG_SERVER+user.getPic()).placeholder(R.drawable.ic_default_image).into(mAvatarCiv);
               mNameTv.setText(user.getName());
-
-              JSONObject salesmanObj = JSON.parseObject(jsonObj.getString("salesman_info"));
-
-              List<String> data = new ArrayList<>();
-              JSONArray jsonDepArray = salesmanObj.getJSONArray("dep_list");
-              for (int i = 0; i < jsonDepArray.size(); i++) {
-                JSONObject depObj = jsonDepArray.getJSONObject(i);
-                data.add(depObj.getString("name"));
-              }
-              mDepAdapter.setNewData(data);
-
             }
           }
         });
+  }
+
+  private void getDepList() {
+    OkGo.<String>get(MallAPI.USER_DEPARTMENT_LIST)
+        .tag(this)
+        .execute(new StringDialogCallback(mContext) {
+
+          @Override
+          public void onSuccess(Response<String> response) {
+            super.onSuccess(response);
+            if (response.code() == 200) {
+              List<DepRole> depRoleList = JSON.parseArray(response.body(), DepRole.class);
+              mDepAdapter.setNewData(depRoleList);
+            }
+          }
+        });
+  }
+
+  @OnClick(R.id.stv_modify_password)
+  public void onModifyPwd() {
+    startActivity(new Intent(mContext, ModifyPwdActivity.class));
+  }
+
+  @OnClick(R.id.stv_bind_mobile)
+  public void onBindMobile() {
+    startActivity(new Intent(mContext, BindMobileActivity.class));
+  }
+
+  @OnClick(R.id.stv_clear_cache)
+  public void onClearCache() {
+    new CircleDialog.Builder(mContext)
+        .setTitle("提示")
+        .setText("您确定要清除吗？")
+        .setNegative("取消", new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+
+          }
+        })
+        .setPositive("确定", new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+            mClearCacheStv.setRightString("0M");
+          }
+        }).show();
+  }
+
+  @OnClick(R.id.tv_logout)
+  public void onlogout() {
+    new CircleDialog.Builder(mContext)
+        .setTitle("提示")
+        .setText("您确定要退出吗？")
+        .setNegative("取消", new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+
+          }
+        })
+        .setPositive("确定", new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+            OkGo.<String>post(MallAPI.USER_LOGOUT)
+                .tag(this)
+                .execute(new StringDialogCallback(mContext) {
+
+                  @Override
+                  public void onSuccess(Response<String> response) {
+                    super.onSuccess(response);
+                    startActivity(new Intent(mContext, MainActivity.class).putExtra("app_exit", true));
+                    mContext.sendBroadcast(new Intent(Constants.APP_EXIT_ACTION));
+                  }
+                });
+          }
+        }).show();
   }
 
 

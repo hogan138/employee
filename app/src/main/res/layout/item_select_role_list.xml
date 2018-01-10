@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:background="@color/color_ff"
+  android:padding="12dp"
+  android:orientation="vertical">
+
+
+  <TextView
+    android:id="@+id/tv_dep_role"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="17sp"
+    android:textColor="@color/color_33"
+    android:text="4月30日 下午 14:12"/>
+
+
+</LinearLayout>

@@ -59,7 +59,7 @@ public class ModifyPwdActivity extends BaseActivity{
 
   @OnClick(R.id.tv_topbar_right)
   public void onModifyPwd() {
-    OkGo.<String>put(MallAPI.USER+"/update")
+    OkGo.<String>post(MallAPI.USER+"/update-password")
         .tag(this)
         .params("password", EncryptUtils.encryptSHA1ToString(mPasswordEdt.getText().toString().trim()).toLowerCase())
         .execute(new StringDialogCallback(mContext) {

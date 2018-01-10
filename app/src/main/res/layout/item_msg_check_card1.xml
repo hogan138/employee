@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:paddingLeft="12dp"
+  android:paddingRight="12dp"
+  android:paddingTop="12dp"
+  android:orientation="vertical">
+
+
+  <TextView
+    android:id="@+id/tv_date"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/tv_cc_shape"
+    android:layout_gravity="center"
+    android:padding="6dp"
+    android:textSize="13sp"
+    android:textColor="@color/color_ff"
+    android:text="4月30日 下午 14:12"/>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:padding="16dp"
+    android:background="@drawable/tv_cc_stroke_shape"
+    android:orientation="vertical">
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal">
+      <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="@color/color_1a"
+        android:textSize="17sp"
+        android:text="三九满意度问卷调查"/>
+      <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_336"
+        android:textSize="15sp"
+        android:text="审核"/>
+    </LinearLayout>
+
+    <TextView
+      android:id="@+id/tv_content"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="6dp"
+      android:textColor="@color/color_80"
+      android:textSize="15sp"
+      android:text="业务员何小勇申请提现佣金1000元"/>
+
+    <LinearLayout
+      android:visibility="gone"
+      android:id="@+id/rl_reject"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
+      <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/color_e5"/>
+      <TextView
+        android:id="@+id/tv_reject_reason"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/color_80"
+        android:textSize="15sp"
+        android:text="原因：这个客户还没有还款！"/>
+    </LinearLayout>
+
+
+  </LinearLayout>
+
+
+</LinearLayout>
