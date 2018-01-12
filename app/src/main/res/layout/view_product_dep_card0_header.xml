@@ -82,7 +82,7 @@
           android:alpha="0.6"
           android:textSize="12sp"
           android:textColor="@color/color_ff"
-          android:text="已售金额(个)"/>
+          android:text="已售金额(元)"/>
         <TextView
           android:id="@+id/tv_price"
           android:layout_width="wrap_content"

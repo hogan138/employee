@@ -20,9 +20,13 @@ import com.mylhyl.circledialog.CircleDialog;
 import com.mylhyl.circledialog.callback.ConfigButton;
 import com.mylhyl.circledialog.callback.ConfigDialog;
 import com.mylhyl.circledialog.callback.ConfigInput;
+import com.mylhyl.circledialog.callback.ConfigItems;
+import com.mylhyl.circledialog.callback.ConfigTitle;
 import com.mylhyl.circledialog.params.ButtonParams;
 import com.mylhyl.circledialog.params.DialogParams;
 import com.mylhyl.circledialog.params.InputParams;
+import com.mylhyl.circledialog.params.ItemsParams;
+import com.mylhyl.circledialog.params.TitleParams;
 import com.mylhyl.circledialog.view.listener.OnInputClickListener;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
@@ -112,6 +116,12 @@ public class MsgCheckCard1Fragment extends BaseFragment {
         })
         .setTitle("请选择审核结果")
         .setTitleColor(getResources().getColor(R.color.color_e94))
+        .configTitle(new ConfigTitle() {
+          @Override
+          public void onConfig(TitleParams params) {
+            params.textSize = 38;
+          }
+        })
         .setItems(items, new AdapterView.OnItemClickListener() {
           @Override
           public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -123,6 +133,12 @@ public class MsgCheckCard1Fragment extends BaseFragment {
                 showRejectDialog(msgId);
                 break;
             }
+          }
+        })
+        .configItems(new ConfigItems() {
+          @Override
+          public void onConfig(ItemsParams params) {
+            params.textColor = getResources().getColor(R.color.color_aff);
           }
         })
         .setNegative("取消", null)
@@ -200,7 +216,7 @@ public class MsgCheckCard1Fragment extends BaseFragment {
     loadData();
   }
 
-  private void loadData() {
+  public void loadData() {
     OkGo.<String>get(MallAPI.USER_USER_NOTIFICATION)
         .tag(this)
         .params("expand", "type")

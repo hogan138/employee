@@ -31,6 +31,8 @@ public class Constants {
   public static final String KEY_DEPARTMENT_TYPE = "department_type_key";
   public static final String KEY_DEPARTMENT_ID = "department_id_key";
   public static final String KEY_ROLE_ID = "role_id_key";
+  public static final String KEY_DEPARTMENT_NAME = "department_name_key";
+  public static final String KEY_ROLE_NAME = "role_name_key";
 
   //================= refresh state ====================
   public static final int STATE_NORMAL = 0;

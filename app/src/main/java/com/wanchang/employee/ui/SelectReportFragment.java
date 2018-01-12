@@ -65,7 +65,7 @@ public class SelectReportFragment extends BaseFragment {
   @Override
   protected void initView() {
     mLeftTv.setVisibility(View.GONE);
-    mTitleTv.setText("报表");
+    //mTitleTv.setText("报表");
   }
 
   @Override
@@ -84,6 +84,11 @@ public class SelectReportFragment extends BaseFragment {
         }
         ft.commit();
       }
+
+      String depName = ACache.get(mContext).getAsString(Constants.KEY_DEPARTMENT_NAME);
+      String roleName = ACache.get(mContext).getAsString(Constants.KEY_ROLE_NAME);
+
+      mTitleTv.setText(depName+"-"+roleName);
     }
   }
 
@@ -147,6 +152,12 @@ public class SelectReportFragment extends BaseFragment {
         ft.replace(R.id.fl_my_container, FinanceDepFragment.newInstance("finance_dep"));
       }
       ft.commit();
+
+
+      String depName = ACache.get(mContext).getAsString(Constants.KEY_DEPARTMENT_NAME);
+      String roleName = ACache.get(mContext).getAsString(Constants.KEY_ROLE_NAME);
+
+      mTitleTv.setText(depName+"-"+roleName);
     }
   }
 }

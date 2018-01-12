@@ -78,10 +78,14 @@ public class SelectRoleActivity extends BaseActivity {
         String department_type = depRole.getDepartment().getType()+"";
         String department_id = depRole.getDepartment_id()+"";
         String role_id = depRole.getRole_id()+"";
+        String department_name = depRole.getDepartment().getName()+"";
+        String role_name = depRole.getRole().getName()+"";
         LogUtils.e(department_type+"-----"+department_id+"-----"+role_id);
         ACache.get(mContext).put(Constants.KEY_DEPARTMENT_TYPE, department_type);
         ACache.get(mContext).put(Constants.KEY_DEPARTMENT_ID, department_id);
         ACache.get(mContext).put(Constants.KEY_ROLE_ID, role_id);
+        ACache.get(mContext).put(Constants.KEY_DEPARTMENT_NAME, department_name+"");
+        ACache.get(mContext).put(Constants.KEY_ROLE_NAME, role_name+"");
         setResult(RESULT_OK);
         finish();
       }

@@ -12,6 +12,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 import butterknife.BindView;
+import com.alibaba.fastjson.JSON;
 import com.blankj.utilcode.util.DeviceUtils;
 import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.ToastUtils;
@@ -20,11 +21,16 @@ import com.flyco.tablayout.listener.CustomTabEntity;
 import com.hyphenate.EMMessageListener;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMMessage;
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.model.Response;
 import com.umeng.message.PushAgent;
 import com.wanchang.employee.R;
 import com.wanchang.employee.app.Constants;
 import com.wanchang.employee.app.MallApp;
+import com.wanchang.employee.data.api.MallAPI;
+import com.wanchang.employee.data.callback.StringDialogCallback;
 import com.wanchang.employee.data.entity.ContactTemp;
+import com.wanchang.employee.data.entity.DepRole;
 import com.wanchang.employee.data.entity.TabEntity;
 import com.wanchang.employee.easemob.Constant;
 import com.wanchang.employee.easemob.DemoHelper;
@@ -42,10 +48,10 @@ public class MainActivity extends BaseActivity {
   CommonTabLayout mTabLayout;
 
   private String[] mTitles = {"消息", "通讯录", "报表", "我的"};
-  private int[] mIconUnselectIds = {R.drawable.tabbar_buy_n, R.drawable.tabbar_class_n,
-      R.drawable.tabbar_message_n, R.drawable.tabbar_my_n};
-  private int[] mIconSelectIds = {R.drawable.tabbar_buy_s, R.drawable.tabbar_class_s,
-      R.drawable.tabbar_message_s, R.drawable.tabbar_my_s};
+  private int[] mIconUnselectIds = {R.drawable.tabbar_message_n, R.drawable.tabbar_address_n,
+      R.drawable.tabbar_statement_n, R.drawable.tabbar_my_n};
+  private int[] mIconSelectIds = {R.drawable.tabbar_message_s, R.drawable.tabbar_address_s,
+      R.drawable.tabbar_statement_s, R.drawable.tabbar_my_s};
   private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
   private ArrayList<Fragment> mFragments = new ArrayList<>();
 
@@ -114,6 +120,36 @@ public class MainActivity extends BaseActivity {
     LogUtils.e("-------"+PushAgent.getInstance(mContext).getRegistrationId());
     // runtime permission for android 6.0, just require all permissions here for simple
     requestPermissions();
+
+    String depType = ACache.get(mContext).getAsString(Constants.KEY_DEPARTMENT_TYPE);
+    if (TextUtils.isEmpty(depType)) {
+      saveDepRole();
+    }
+  }
+
+  private void saveDepRole() {
+    OkGo.<String>get(MallAPI.USER_DEPARTMENT_LIST)
+        .tag(this)
+        .execute(new StringDialogCallback(mContext) {
+
+          @Override
+          public void onSuccess(Response<String> response) {
+            super.onSuccess(response);
+            if (response.code() == 200) {
+              List<DepRole> depRoleList = JSON.parseArray(response.body(), DepRole.class);
+              if (depRoleList.size() >= 1) {
+
+                ACache.get(mContext).put(Constants.KEY_DEPARTMENT_TYPE, depRoleList.get(0).getDepartment().getType()+"");
+                ACache.get(mContext).put(Constants.KEY_DEPARTMENT_ID, depRoleList.get(0).getDepartment_id()+"");
+                ACache.get(mContext).put(Constants.KEY_ROLE_ID, depRoleList.get(0).getRole_id()+"");
+
+                ACache.get(mContext).put(Constants.KEY_DEPARTMENT_NAME, depRoleList.get(0).getDepartment().getName()+"");
+                ACache.get(mContext).put(Constants.KEY_ROLE_NAME, depRoleList.get(0).getRole().getName()+"");
+
+              }
+            }
+          }
+        });
   }
 
   @Override

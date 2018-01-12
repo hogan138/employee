@@ -27,7 +27,7 @@
     android:layout_margin="10dp"
     android:textSize="12sp"
     android:textColor="@color/color_4c"
-    android:text="最近15天"/>
+    android:text="最近30天"/>
 
 
 </LinearLayout>

@@ -1,6 +1,8 @@
 package com.wanchang.employee.ui.salesman.news;
 
 import android.os.Bundle;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -11,6 +13,7 @@ import com.hyphenate.chat.EMClient;
 import com.hyphenate.easeui.utils.EaseCommonUtils;
 import com.hyphenate.easeui.widget.EaseAlertDialog;
 import com.hyphenate.easeui.widget.EaseAlertDialog.AlertDialogUser;
+import com.kyleduo.switchbutton.SwitchButton;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.Response;
 import com.wanchang.employee.R;
@@ -18,6 +21,7 @@ import com.wanchang.employee.data.api.MallAPI;
 import com.wanchang.employee.data.callback.StringDialogCallback;
 import com.wanchang.employee.data.entity.User;
 import com.wanchang.employee.easemob.Constant;
+import com.wanchang.employee.easemob.db.DemoDBManager;
 import com.wanchang.employee.ui.base.BaseActivity;
 import com.wanchang.employee.util.GlideApp;
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -34,6 +38,9 @@ public class SingleChatSettingActivity extends BaseActivity {
 
   private String imAccount;
 
+  @BindView(R.id.sb_block_msg)
+  SwitchButton mBlockMsgSb;
+
   @Override
   protected int getLayoutResId() {
     return R.layout.activity_single_chat_setting;
@@ -43,6 +50,24 @@ public class SingleChatSettingActivity extends BaseActivity {
   protected void initData() {
     imAccount = getIntent().getStringExtra("im_account");
     LogUtils.e("======"+imAccount);
+
+
+    mBlockMsgSb.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+      @Override
+      public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+        if (b) {
+          DemoDBManager.getInstance().setBlockMsg(imAccount, true);
+        } else {
+          DemoDBManager.getInstance().setBlockMsg(imAccount, false);
+        }
+      }
+    });
+
+    if (DemoDBManager.getInstance().isBlockMsg(imAccount)) {
+      mBlockMsgSb.setCheckedNoEvent(true);
+    } else {
+      mBlockMsgSb.setCheckedNoEvent(false);
+    }
   }
 
   @Override

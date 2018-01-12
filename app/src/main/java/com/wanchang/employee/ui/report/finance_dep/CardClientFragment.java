@@ -235,7 +235,7 @@ public class CardClientFragment extends BaseFragment {
   public static Date getBeforeDay(Date date) {
     Calendar calendar = Calendar.getInstance();
     calendar.setTime(date);
-    calendar.add(Calendar.DAY_OF_MONTH, -15);
+    calendar.add(Calendar.DAY_OF_MONTH, -30);
     date = calendar.getTime();
     return date;
   }
@@ -291,7 +291,7 @@ public class CardClientFragment extends BaseFragment {
         public void onClick(View view) {
           mCirclePop.dismiss();
           is15 = true;
-          mTopTimeTv.setText("最近15天");
+          mTopTimeTv.setText("最近30天");
           getProductHeader();
         }
       });

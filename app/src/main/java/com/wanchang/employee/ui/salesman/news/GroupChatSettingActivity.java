@@ -3,6 +3,8 @@ package com.wanchang.employee.ui.salesman.news;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ImageView;
 import android.widget.TextView;
 import butterknife.BindView;
@@ -16,6 +18,7 @@ import com.hyphenate.chat.EMClient;
 import com.hyphenate.easeui.utils.EaseCommonUtils;
 import com.hyphenate.easeui.widget.EaseAlertDialog;
 import com.hyphenate.easeui.widget.EaseAlertDialog.AlertDialogUser;
+import com.kyleduo.switchbutton.SwitchButton;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.Response;
 import com.wanchang.employee.R;
@@ -23,6 +26,7 @@ import com.wanchang.employee.data.api.MallAPI;
 import com.wanchang.employee.data.callback.StringDialogCallback;
 import com.wanchang.employee.data.entity.User;
 import com.wanchang.employee.easemob.Constant;
+import com.wanchang.employee.easemob.db.DemoDBManager;
 import com.wanchang.employee.ui.base.BaseActivity;
 import com.wanchang.employee.util.GlideApp;
 import java.util.List;
@@ -37,6 +41,10 @@ public class GroupChatSettingActivity extends BaseActivity {
   @BindView(R.id.rv_group_member)
   RecyclerView mGroupMemberRv;
   private BaseQuickAdapter<User, BaseViewHolder> mAdapter;
+
+
+  @BindView(R.id.sb_block_msg)
+  SwitchButton mBlockMsgSb;
 
   @Override
   protected int getLayoutResId() {
@@ -58,6 +66,24 @@ public class GroupChatSettingActivity extends BaseActivity {
       }
     });
     mGroupMemberRv.setLayoutManager(new GridLayoutManager(mContext, 5));
+
+
+    mBlockMsgSb.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+      @Override
+      public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+        if (b) {
+          DemoDBManager.getInstance().setBlockMsg(imGroupId, true);
+        } else {
+          DemoDBManager.getInstance().setBlockMsg(imGroupId, false);
+        }
+      }
+    });
+
+    if (DemoDBManager.getInstance().isBlockMsg(imGroupId)) {
+      mBlockMsgSb.setCheckedNoEvent(true);
+    } else {
+      mBlockMsgSb.setCheckedNoEvent(false);
+    }
   }
 
   @Override
