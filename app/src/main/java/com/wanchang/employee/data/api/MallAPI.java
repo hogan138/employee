@@ -98,6 +98,7 @@ public class MallAPI {
   public static final String CHART_PROMOTION_CHART = SERVER + "/system/chart/promotion-chart";
   public static final String SYS_CHART_SALESMAN_CHART = SERVER + "/system/chart/salesman-chart";
   public static final String CHART_SALESMAN_DETAIL = SERVER + "/system/chart/salesman-detail";
+  public static final String CLIENT_CLIENT_TAG = SERVER + "/client/client-tag";
   public static final String CHART_AREA_CHART = SERVER + "/system/chart/area-chart";
   public static final String CHART_DEP_CHART = SERVER + "/system/chart/dep-chart";
   public static final String CHART_CLIENT_HEADER = SERVER + "/system/chart/client-header";

@@ -136,7 +136,7 @@ public class SelectReportFragment extends BaseFragment {
 
   }
 
-  @OnClick(R.id.tv_topbar_title)
+  @OnClick(R.id.tv_topbar_right)
   public void selectRole() {
     startActivityForResult(new Intent(mContext, SelectRoleActivity.class), 200);
   }

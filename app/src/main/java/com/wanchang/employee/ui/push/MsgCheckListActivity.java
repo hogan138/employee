@@ -60,7 +60,7 @@ public class MsgCheckListActivity extends BaseActivity{
 
   }
 
-  @OnClick(R.id.tv_topbar_title)
+  @OnClick(R.id.tv_topbar_right)
   public void selectRole() {
     startActivityForResult(new Intent(mContext, SelectRoleActivity.class), 200);
   }

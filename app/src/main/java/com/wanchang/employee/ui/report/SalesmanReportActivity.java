@@ -3,11 +3,14 @@ package com.wanchang.employee.ui.report;
 import android.graphics.Color;
 import android.text.format.DateFormat;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.OnClick;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.bigkoo.pickerview.TimePickerView;
 import com.blankj.utilcode.util.TimeUtils;
 import com.github.mikephil.charting.charts.LineChart;
@@ -21,15 +24,20 @@ import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.Response;
+import com.lzy.okgo.request.base.Request;
 import com.wanchang.employee.R;
 import com.wanchang.employee.data.api.MallAPI;
 import com.wanchang.employee.data.callback.StringDialogCallback;
+import com.wanchang.employee.data.entity.ClientTag;
 import com.wanchang.employee.ui.base.BaseActivity;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
+import org.angmarch.views.NiceSpinner;
 
 public class SalesmanReportActivity extends BaseActivity {
 
@@ -40,6 +48,11 @@ public class SalesmanReportActivity extends BaseActivity {
   TextView mStartTimeTv;
   @BindView(R.id.tv_end_time)
   TextView mEndTimeTv;
+
+  @BindView(R.id.spinner_category)
+  NiceSpinner mCategorySpinner;
+  @BindView(R.id.spinner_tag)
+  NiceSpinner mTagSpinner;
 
   @BindView(R.id.chart_price)
   LineChart mChart1;
@@ -70,6 +83,9 @@ public class SalesmanReportActivity extends BaseActivity {
 
   private int salesman_id;
 
+  private int client_category;
+  private int client_tag;
+
 
   @Override
   protected int getLayoutResId() {
@@ -90,25 +106,63 @@ public class SalesmanReportActivity extends BaseActivity {
     mStartTimeTv.setText(new SimpleDateFormat("yyyy.MM.dd").format(Calendar.getInstance().getTime()));
     mEndTimeTv.setText(new SimpleDateFormat("yyyy.MM.dd").format(Calendar.getInstance().getTime()));
 
-    //getDepList();
-    getReport();
+    getClientCategory();
+    getClientTag();
+
+    mCategorySpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+      @Override
+      public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        client_category = i;
+        getReport();
+      }
+
+      @Override
+      public void onNothingSelected(AdapterView<?> adapterView) {
+
+      }
+    });
+
+    mTagSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+      @Override
+      public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        client_tag = i;
+        getReport();
+      }
+
+      @Override
+      public void onNothingSelected(AdapterView<?> adapterView) {
+
+      }
+    });
   }
 
-  private void getDepList() {
-    OkGo.<String>get(MallAPI.SALESMAN_DEP_LIST)
+  private void getClientCategory() {
+    List<String> dataset = new LinkedList<>(Arrays.asList("药店类型", "商业", "连锁", "单店"));
+    mCategorySpinner.attachDataSource(dataset);
+  }
+
+  List<ClientTag> clientTags;
+  private void getClientTag() {
+    OkGo.<String>get(MallAPI.CLIENT_CLIENT_TAG)
         .tag(this)
-        .params("department_id", "")
         .execute(new StringDialogCallback(mContext) {
 
           @Override
           public void onSuccess(Response<String> response) {
             super.onSuccess(response);
             if (response.code() == 200) {
+              JSONObject jsonObj = JSON.parseObject(response.body());
+              clientTags = JSON.parseArray(jsonObj.getString("items"), ClientTag.class);
+              List<String> dataset = new ArrayList<>();
+              dataset.add("药店标签");
+              for (ClientTag tag: clientTags) {
+                dataset.add(tag.getTag());
+              }
+              mTagSpinner.attachDataSource(dataset);
             }
           }
         });
   }
-
 
   List<String> keysList;
   private void getReport() {
@@ -207,6 +261,24 @@ public class SalesmanReportActivity extends BaseActivity {
               mChart2.setData(cd2);
               mChart2.fitScreen();
               mChart2.setVisibleXRangeMaximum(6);
+            }
+          }
+
+          @Override
+          public void onStart(Request<String, ? extends Request> request) {
+            super.onStart(request);
+            if (client_category == 1) {
+              request.params("client_category", 10);
+            }
+            if (client_category == 2) {
+              request.params("client_category", 20);
+            }
+            if (client_category == 3) {
+              request.params("client_category", 30);
+            }
+
+            if (client_tag != 0) {
+              request.params("client_tag", clientTags.get(client_tag-1).getTag());
             }
           }
         });

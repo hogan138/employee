@@ -24,8 +24,6 @@
     android:id="@+id/tv_topbar_title"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:drawableRight="@drawable/down"
-    android:drawablePadding="3dp"
     android:text=""
     android:layout_centerInParent="true"
     android:gravity="center"
@@ -36,8 +34,10 @@
 
   <TextView
     android:id="@+id/tv_topbar_right"
-    android:layout_width="wrap_content"
+    android:layout_width="60dp"
     android:layout_height="wrap_content"
+    android:drawableRight="@drawable/icon_form_role"
+    android:drawablePadding="3dp"
     android:layout_alignParentRight="true"
     android:layout_centerVertical="true"
     android:layout_marginRight="16dp"

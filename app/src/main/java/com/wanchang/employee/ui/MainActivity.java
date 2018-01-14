@@ -99,7 +99,6 @@ public class MainActivity extends BaseActivity {
       public void onReceive(Context context, Intent intent) {
         ACache.get(mContext).clear();
         DemoHelper.getInstance().logout(true, null);
-        startActivity(new Intent(context, LoginActivity.class));
         finish();
       }
     };
@@ -359,11 +358,11 @@ public class MainActivity extends BaseActivity {
       mTabLayout.setCurrentTab(0);
     }
 
-    boolean isAppExit = intent.getBooleanExtra("app_exit", false);
-    LogUtils.e(isAppExit+"===");
-    if (isAppExit) {
-      mTabLayout.setCurrentTab(0);
-    }
+//    boolean isAppExit = intent.getBooleanExtra("app_exit", false);
+//    LogUtils.e(isAppExit+"===");
+//    if (isAppExit) {
+//      mTabLayout.setCurrentTab(0);
+//    }
   }
 
   private android.app.AlertDialog.Builder exceptionBuilder;
@@ -384,9 +383,6 @@ public class MainActivity extends BaseActivity {
    * show the dialog when user met some exception: such as login on another device, user removed or user forbidden
    */
   private void showExceptionDialog(String exceptionType) {
-    mTabLayout.setCurrentTab(0);
-    sendBroadcast(new Intent(Constants.APP_EXIT_ACTION));
-
     isExceptionDialogShow = true;
     String st = getResources().getString(R.string.Logoff_notification);
     if (!MainActivity.this.isFinishing()) {
@@ -407,6 +403,8 @@ public class MainActivity extends BaseActivity {
 //            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
 //            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
 //            startActivity(intent);
+
+            sendBroadcast(new Intent(Constants.APP_EXIT_ACTION));
 
           }
         });
