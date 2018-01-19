@@ -37,6 +37,7 @@ import com.wanchang.employee.data.api.MallAPI;
 import com.wanchang.employee.data.callback.StringDialogCallback;
 import com.wanchang.employee.data.entity.MsgCheck;
 import com.wanchang.employee.ui.base.BaseFragment;
+import com.yqritc.recyclerviewflexibledivider.HorizontalDividerItemDecoration;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -84,8 +85,8 @@ public class MsgCheckCard1Fragment extends BaseFragment {
   @Override
   protected void initData() {
     mRv.setLayoutManager(new LinearLayoutManager(mContext));
-//    mSystemRv.addItemDecoration(new HorizontalDividerItemDecoration.Builder(mContext).color(
-//        getResources().getColor(R.color.color_e5)).build());
+    mRv.addItemDecoration(new HorizontalDividerItemDecoration.Builder(mContext).color(
+        getResources().getColor(R.color.color_f2)).size(110).build());
     mRv.setAdapter(mAdapter = new BaseQuickAdapter<MsgCheck, BaseViewHolder>(R.layout.item_msg_check_card1) {
       @Override
       protected void convert(BaseViewHolder helper, MsgCheck item) {

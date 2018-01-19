@@ -90,12 +90,12 @@ public class MallApp extends Application {
 
     // utilcode
     Utils.init(this);
-    LogUtils.getConfig().setLogSwitch(true);
+    LogUtils.getConfig().setLogSwitch(false);
     // okgo
     OkHttpClient.Builder builder = new OkHttpClient.Builder();
     HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor("OkGo");
       //log打印级别，决定了log显示的详细程度
-    loggingInterceptor.setPrintLevel(HttpLoggingInterceptor.Level.BODY);
+    loggingInterceptor.setPrintLevel(HttpLoggingInterceptor.Level.NONE);
       //log颜色级别，决定了log在控制台显示的颜色
     loggingInterceptor.setColorLevel(Level.INFO);
     builder.addInterceptor(loggingInterceptor);
@@ -121,7 +121,7 @@ public class MallApp extends Application {
 
     //umeng
     final PushAgent mPushAgent = PushAgent.getInstance(this);
-    mPushAgent.setDebugMode(true);
+    mPushAgent.setDebugMode(false);
     //mPushAgent.setDisplayNotificationNumber(0);
     mPushAgent.setNotificationPlaySound(MsgConstant.NOTIFICATION_PLAY_SERVER);
     mPushAgent.setMuteDurationSeconds(3);

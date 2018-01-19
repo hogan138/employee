@@ -47,12 +47,6 @@
       android:textColor="@color/color_336"
       android:textSize="16sp"/>
 
-    <View
-      android:layout_width="match_parent"
-      android:layout_height="1dp"
-      android:layout_alignParentBottom="true"
-      android:background="@color/color_e6"/>
-
   </RelativeLayout>
 
   <com.flyco.tablayout.SlidingTabLayout
@@ -63,18 +57,22 @@
     android:paddingBottom="8dp"
     android:background="@color/color_ff"
     tl:tl_tab_space_equal="true"
-    tl:tl_indicator_height="1dp"
-    tl:tl_indicator_margin_left="36dp"
-    tl:tl_indicator_margin_right="36dp"
+    tl:tl_indicator_height="2dp"
+    tl:tl_indicator_margin_left="66dp"
+    tl:tl_indicator_margin_right="66dp"
     tl:tl_indicator_color="@color/color_336"
+    tl:tl_indicator_margin_bottom="6dp"
+    tl:tl_underline_color="@color/color_cc"
+    tl:tl_underline_height="1dp"
     tl:tl_textSelectColor="@color/color_336"
     tl:tl_textUnselectColor="@color/color_4c"
-    tl:tl_textsize="12sp"/>
+    tl:tl_textsize="14sp"/>
 
   <android.support.v4.view.ViewPager
     android:id="@+id/vp"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"/>
+    android:layout_height="match_parent"
+    android:background="@color/color_f2"/>
 
 
 </LinearLayout>

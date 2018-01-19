@@ -15,7 +15,10 @@
     android:layout_height="wrap_content"
     android:background="@drawable/tv_cc_shape"
     android:layout_gravity="center"
-    android:padding="6dp"
+    android:paddingLeft="6dp"
+    android:paddingRight="6dp"
+    android:paddingTop="2dp"
+    android:paddingBottom="2dp"
     android:textSize="13sp"
     android:textColor="@color/color_ff"
     android:text="4月30日 下午 14:12"/>

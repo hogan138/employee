@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.TextView;
 import butterknife.BindView;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -37,6 +38,7 @@ import com.wanchang.employee.data.api.MallAPI;
 import com.wanchang.employee.data.callback.StringDialogCallback;
 import com.wanchang.employee.data.entity.MsgCheck;
 import com.wanchang.employee.ui.base.BaseFragment;
+import com.yqritc.recyclerviewflexibledivider.HorizontalDividerItemDecoration;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -84,24 +86,32 @@ public class MsgCheckCard0Fragment extends BaseFragment {
   @Override
   protected void initData() {
     mRv.setLayoutManager(new LinearLayoutManager(mContext));
-//    mSystemRv.addItemDecoration(new HorizontalDividerItemDecoration.Builder(mContext).color(
-//        getResources().getColor(R.color.color_e5)).build());
+    mRv.addItemDecoration(new HorizontalDividerItemDecoration.Builder(mContext).color(
+        getResources().getColor(R.color.color_f2)).size(110).build());
     mRv.setAdapter(mAdapter = new BaseQuickAdapter<MsgCheck, BaseViewHolder>(R.layout.item_msg_check_card0) {
       @Override
       protected void convert(BaseViewHolder helper, MsgCheck item) {
         helper.setText(R.id.tv_date, getTime(item.getCreated_at()));
         helper.setText(R.id.tv_title, item.getType());
         helper.setText(R.id.tv_content, item.getTitle());
+        TextView tv = helper.getView(R.id.tv_status);
         if (item.getStatus() == -1) {
+          tv.setTextSize(13);
           helper.setText(R.id.tv_status, "已拒绝");
+          helper.setGone(R.id.tv_status, true);
           helper.setTextColor(R.id.tv_status, getResources().getColor(R.color.color_80));
         } else if (item.getStatus() == 1) {
+          tv.setTextSize(15);
           helper.setText(R.id.tv_status, "审核");
+          helper.setGone(R.id.tv_status, true);
           helper.setTextColor(R.id.tv_status, getResources().getColor(R.color.color_336));
         } else if (item.getStatus() == 100) {
+          tv.setTextSize(13);
           helper.setText(R.id.tv_status, "已通过");
+          helper.setGone(R.id.tv_status, true);
           helper.setTextColor(R.id.tv_status, getResources().getColor(R.color.color_80));
         } else {
+          helper.setGone(R.id.tv_status, false);
           helper.setText(R.id.tv_status, "只读");
           helper.setTextColor(R.id.tv_status, getResources().getColor(R.color.color_1a));
         }
@@ -136,7 +146,7 @@ public class MsgCheckCard0Fragment extends BaseFragment {
           @Override
           public void onConfig(DialogParams params) {
             //增加弹出动画
-            params.animStyle = R.style.dialogWindowAnim;
+            //params.animStyle = R.style.dialogWindowAnim;
           }
         })
         .setTitle("请选择审核结果")
