@@ -908,8 +908,6 @@ public class CommonTabLayout extends FrameLayout implements ValueAnimator.Animat
         bundle.putParcelable("instanceState", super.onSaveInstanceState());
         bundle.putInt("mCurrentTab", mCurrentTab);
         return bundle;
-
-        //return super.onSaveInstanceState();
     }
 
     @Override
@@ -917,7 +915,7 @@ public class CommonTabLayout extends FrameLayout implements ValueAnimator.Animat
         if (state instanceof Bundle) {
             Bundle bundle = (Bundle) state;
             mCurrentTab = bundle.getInt("mCurrentTab");
-            //state = bundle.getParcelable("instanceState");
+            state = bundle.getParcelable("instanceState");
             if (mCurrentTab != 0 && mTabsContainer.getChildCount() > 0) {
                 updateTabSelection(mCurrentTab);
             }

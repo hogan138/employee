@@ -24,7 +24,7 @@ public class FragmentChangeManager {
     /** 初始化fragments */
     private void initFragments() {
         for (Fragment fragment : mFragments) {
-            mFragmentManager.beginTransaction().add(mContainerViewId, fragment).hide(fragment).commitAllowingStateLoss();
+            mFragmentManager.beginTransaction().add(mContainerViewId, fragment).hide(fragment).commit();
         }
 
         setFragments(0);
@@ -40,7 +40,7 @@ public class FragmentChangeManager {
             } else {
                 ft.hide(fragment);
             }
-            ft.commitAllowingStateLoss();
+            ft.commit();
         }
         mCurrentTab = index;
     }

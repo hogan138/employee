@@ -1,5 +1,5 @@
 <resources>
-  <string name="app_name">工作版</string>
+  <string name="app_name">万昌医药工作版</string>
 
   <!-- easemo ui start -->
   <string name="at_your_in_group">%s在群聊中@了你</string>

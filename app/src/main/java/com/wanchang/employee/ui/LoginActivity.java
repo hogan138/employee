@@ -28,6 +28,7 @@ import com.lzy.okgo.model.Response;
 import com.umeng.message.PushAgent;
 import com.wanchang.employee.R;
 import com.wanchang.employee.app.Constants;
+import com.wanchang.employee.autoupdate.UpdateManager;
 import com.wanchang.employee.data.api.MallAPI;
 import com.wanchang.employee.data.callback.StringDialogCallback;
 import com.wanchang.employee.data.entity.LoginInfo;
@@ -92,7 +93,9 @@ public class LoginActivity extends BaseActivity {
   @Override
   protected void initView() {
     mLeftTv.setVisibility(View.GONE);
-    mTitleTv.setText("商城登录");
+    mTitleTv.setText("登录");
+
+    new UpdateManager(this).checkUpdate(false);
   }
 
   private void readyCaptcha() {
@@ -323,9 +326,9 @@ public class LoginActivity extends BaseActivity {
             super.onSuccess(response);
             if (response.code() == 200) {
               ToastUtils.showShort("登录成功");
-              startActivity(new Intent(mContext, MainActivity.class));
-              finish();
             }
+            startActivity(new Intent(mContext, MainActivity.class));
+            finish();
           }
         });
   }

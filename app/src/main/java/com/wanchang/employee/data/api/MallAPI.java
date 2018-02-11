@@ -6,8 +6,11 @@ package com.wanchang.employee.data.api;
 
 public class MallAPI {
 
-  public static final String SERVER = "http://madmin.yanguangsoft.com";
-  public static final String IMG_SERVER = "http://mup.yanguangsoft.com/";
+  public static final String SERVER = "http://admin.zjwanchang.com";
+  public static final String IMG_SERVER = "https://img.zjwanchang.com/";
+
+//  public static final String SERVER = "http://madmin.yanguangsoft.com";
+//  public static final String IMG_SERVER = "http://mup.yanguangsoft.com/";
 
 
   //upload image

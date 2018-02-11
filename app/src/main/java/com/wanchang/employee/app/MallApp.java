@@ -5,8 +5,10 @@ import android.app.Notification;
 import android.content.Context;
 import android.content.Intent;
 import android.support.multidex.MultiDex;
+import android.text.TextUtils;
 import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.LogUtils;
+import com.blankj.utilcode.util.ToastUtils;
 import com.blankj.utilcode.util.Utils;
 import com.facebook.stetho.Stetho;
 import com.lzy.okgo.OkGo;
@@ -39,6 +41,7 @@ import com.wanchang.employee.ui.home.NewProductListActivity;
 import com.wanchang.employee.ui.home.PromotionListActivity;
 import com.wanchang.employee.ui.me.OrderDetailActivity;
 import com.wanchang.employee.ui.me.OrderListActivity;
+import com.wanchang.employee.ui.push.ArticleDetailActivity;
 import com.wanchang.employee.ui.push.OrderMsgListActivity;
 import com.wanchang.employee.ui.push.PromotionDetailActivity;
 import com.wanchang.employee.ui.push.PromotionMsgListActivity;
@@ -87,37 +90,6 @@ public class MallApp extends Application {
     MultiDex.install(this);
     super.onCreate();
     instance = this;
-
-    // utilcode
-    Utils.init(this);
-    LogUtils.getConfig().setLogSwitch(false);
-    // okgo
-    OkHttpClient.Builder builder = new OkHttpClient.Builder();
-    HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor("OkGo");
-      //log打印级别，决定了log显示的详细程度
-    loggingInterceptor.setPrintLevel(HttpLoggingInterceptor.Level.NONE);
-      //log颜色级别，决定了log在控制台显示的颜色
-    loggingInterceptor.setColorLevel(Level.INFO);
-    builder.addInterceptor(loggingInterceptor);
-    OkGo.getInstance().init(this)
-        .setOkHttpClient(builder.build());
-    // init demo helper
-    DemoHelper.getInstance().init(this);
-    // Initialize Realm
-    Realm.init(this);
-    RealmConfiguration config = new RealmConfiguration.Builder()
-        .name("wanchang_employee.realm")
-//        .schemaVersion(1)
-//        .migration(new MyMigration())
-        .build();
-    Realm.setDefaultConfiguration(config);
-    Stetho.initialize(
-        Stetho.newInitializerBuilder(this)
-            .enableDumpapp(Stetho.defaultDumperPluginsProvider(this))
-            .enableWebKitInspector(RealmInspectorModulesProvider.builder(this).build())
-            .build());
-    //zxing
-    ZXingLibrary.initDisplayOpinion(this);
 
     //umeng
     final PushAgent mPushAgent = PushAgent.getInstance(this);
@@ -178,6 +150,37 @@ public class MallApp extends Application {
       }
     });
 
+    // utilcode
+    Utils.init(this);
+    LogUtils.getConfig().setLogSwitch(true);
+    // okgo
+    OkHttpClient.Builder builder = new OkHttpClient.Builder();
+    HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor("OkGo");
+      //log打印级别，决定了log显示的详细程度
+    loggingInterceptor.setPrintLevel(HttpLoggingInterceptor.Level.BODY);
+      //log颜色级别，决定了log在控制台显示的颜色
+    loggingInterceptor.setColorLevel(Level.INFO);
+    builder.addInterceptor(loggingInterceptor);
+    OkGo.getInstance().init(this)
+        .setOkHttpClient(builder.build());
+    // init demo helper
+    DemoHelper.getInstance().init(this);
+    // Initialize Realm
+    Realm.init(this);
+    RealmConfiguration config = new RealmConfiguration.Builder()
+        .name("wanchang_employee.realm")
+//        .schemaVersion(1)
+//        .migration(new MyMigration())
+        .build();
+    Realm.setDefaultConfiguration(config);
+    Stetho.initialize(
+        Stetho.newInitializerBuilder(this)
+            .enableDumpapp(Stetho.defaultDumperPluginsProvider(this))
+            .enableWebKitInspector(RealmInspectorModulesProvider.builder(this).build())
+            .build());
+    //zxing
+    ZXingLibrary.initDisplayOpinion(this);
+
 //    //搜集本地tbs内核信息并上报服务器，服务器返回结果决定使用哪个内核。
 //    QbSdk.PreInitCallback cb = new QbSdk.PreInitCallback() {
 //
@@ -236,6 +239,10 @@ public class MallApp extends Application {
   }
 
   public void cmdNavigation(Context mContext, String cmd) {
+    if (TextUtils.isEmpty(cmd)) {
+      ToastUtils.showShort("未找到cmd");
+      return;
+    }
     String[] cmdArray = cmd.split("/");
     if (cmdArray.length >= 2) {
       String type = cmdArray[0];
@@ -266,6 +273,9 @@ public class MallApp extends Application {
         openActivity(mContext, new Intent(mContext, OrderMsgListActivity.class), true);
       } else if ("product_tag".equals(type)) {
         openActivity(mContext, new Intent(mContext, ProductListActivity.class), true);
+      } else if ("article".equals(type)) {
+        String id = cmdArray[1];
+        openActivity(mContext, new Intent(mContext, ArticleDetailActivity.class).putExtra("id", id), true);
       }
     }
 

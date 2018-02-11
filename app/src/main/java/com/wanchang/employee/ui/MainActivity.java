@@ -19,7 +19,9 @@ import com.blankj.utilcode.util.ToastUtils;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.hyphenate.EMMessageListener;
+import com.hyphenate.EMValueCallBack;
 import com.hyphenate.chat.EMClient;
+import com.hyphenate.chat.EMGroup;
 import com.hyphenate.chat.EMMessage;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.Response;
@@ -27,6 +29,7 @@ import com.umeng.message.PushAgent;
 import com.wanchang.employee.R;
 import com.wanchang.employee.app.Constants;
 import com.wanchang.employee.app.MallApp;
+import com.wanchang.employee.autoupdate.UpdateManager;
 import com.wanchang.employee.data.api.MallAPI;
 import com.wanchang.employee.data.callback.StringDialogCallback;
 import com.wanchang.employee.data.entity.ContactTemp;
@@ -120,10 +123,25 @@ public class MainActivity extends BaseActivity {
     // runtime permission for android 6.0, just require all permissions here for simple
     requestPermissions();
 
+    new UpdateManager(this).checkUpdate(false);
+
     String depType = ACache.get(mContext).getAsString(Constants.KEY_DEPARTMENT_TYPE);
     if (TextUtils.isEmpty(depType)) {
       saveDepRole();
     }
+
+    EMClient.getInstance().groupManager().asyncGetJoinedGroupsFromServer(
+        new EMValueCallBack<List<EMGroup>>() {
+          @Override
+          public void onSuccess(List<EMGroup> emGroups) {
+            LogUtils.e("success-----");
+          }
+
+          @Override
+          public void onError(int i, String s) {
+
+          }
+        });
   }
 
   private void saveDepRole() {
@@ -325,7 +343,6 @@ public class MainActivity extends BaseActivity {
     outState.putBoolean("isConflict", isConflict);
     outState.putBoolean(Constant.ACCOUNT_REMOVED, isCurrentAccountRemoved);
     super.onSaveInstanceState(outState);
-    outState.clear();
   }
 
   @Override

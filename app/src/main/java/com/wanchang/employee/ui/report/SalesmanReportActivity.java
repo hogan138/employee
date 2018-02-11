@@ -228,6 +228,7 @@ public class SalesmanReportActivity extends BaseActivity {
               mChart1.setData(cd1);
               mChart1.fitScreen();
               mChart1.setVisibleXRangeMaximum(6);
+              mChart1.setExtraOffsets(30, 0, 30, 0);
 
 
               //char 2
@@ -261,6 +262,7 @@ public class SalesmanReportActivity extends BaseActivity {
               mChart2.setData(cd2);
               mChart2.fitScreen();
               mChart2.setVisibleXRangeMaximum(6);
+              mChart2.setExtraOffsets(30, 0, 30, 0);
             }
           }
 
